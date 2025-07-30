@@ -1,0 +1,23 @@
+.n-icon {
+  width: 36px;
+  height: 36px;
+
+  svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.n-button {
+  width: 43px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  &__content {
+    color: $black-color;
+  }
+}

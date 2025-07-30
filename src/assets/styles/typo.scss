@@ -1,0 +1,9 @@
+@mixin main-medium {
+  font-family: "Stetica";
+  font-weight: 400;
+  font-size: 35px;
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
