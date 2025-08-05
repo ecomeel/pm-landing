@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import IntroSection from './components/sections/IntroSection.vue';
 import HeaderPage from './components/HeaderPage.vue';
+import AboutSection from './components/sections/AboutSection.vue';
+import AboutConsult from './components/sections/AboutConsult.vue';
 </script>
 
 <template>
@@ -8,7 +10,8 @@ import HeaderPage from './components/HeaderPage.vue';
     <HeaderPage />
     <main class="page__content">
       <IntroSection />
-      <IntroSection />
+      <AboutSection />
+      <AboutConsult />
     </main>
   </div>
 </template>

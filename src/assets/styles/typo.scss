@@ -7,3 +7,54 @@
     font-size: 28px;
   }
 }
+
+@mixin h2 {
+  font-family: "Cormorant";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 5.2vw;
+
+  span {
+    font-style: italic;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 70px;
+  }
+
+  @media (max-width: 1279px) {
+    font-size: 55px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+}
+
+@mixin body-2 {
+  font-family: "Stetica";
+  font-size: 1.25vw;
+  font-weight: 400;
+  font-style: normal;
+
+  > span {
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
