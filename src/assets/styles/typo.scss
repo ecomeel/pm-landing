@@ -8,6 +8,16 @@
   }
 }
 
+@mixin main-bold {
+  font-family: "Stetica";
+  font-weight: 500;
+  font-size: 35px;
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
 @mixin h2 {
   font-family: "Cormorant";
   font-weight: 500;
@@ -35,10 +45,72 @@
   }
 }
 
+@mixin subtitle {
+  font-family: "Stetica";
+  font-size: 1.82vw;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.04em;
+
+  @media (max-width: 1439px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+@mixin subtitle-semi-bold {
+  font-family: "Stetica";
+  font-size: 1.82vw;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.04em;
+
+  @media (max-width: 1439px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 1279px) {
+    font-size: 21px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
 @mixin body-2 {
   font-family: "Stetica";
   font-size: 1.25vw;
+  line-height: 1.15em;
   font-weight: 400;
+  font-style: normal;
+
+  > span {
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+@mixin body-2-bold {
+  font-family: "Stetica";
+  font-size: 1.25vw;
+  line-height: 1.15em;
+  font-weight: 500;
   font-style: normal;
 
   > span {

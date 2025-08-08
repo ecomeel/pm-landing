@@ -121,8 +121,8 @@ defineOptions({ name: "AboutSection" });
 
   @media (max-width: 1279px) {
     padding: {
-      top: 80px !important;
-      bottom: 60px !important;
+      top: 120px !important;
+      bottom: 120px !important;
     };
 
     &__img {
@@ -167,7 +167,7 @@ defineOptions({ name: "AboutSection" });
     gap: 30px;
     padding: {
       top: 50px !important;
-      bottom: 30px !important;
+      bottom: 50px !important;
     };
 
     &__img-wrapper {

@@ -2,7 +2,8 @@
 import IntroSection from './components/sections/IntroSection.vue';
 import HeaderPage from './components/HeaderPage.vue';
 import AboutSection from './components/sections/AboutSection.vue';
-import AboutConsult from './components/sections/AboutConsult.vue';
+import ConsultReasonsSection from './components/sections/ConsultReasonsSection.vue';
+import StepsSection from './components/sections/StepsSection.vue';
 </script>
 
 <template>
@@ -11,7 +12,8 @@ import AboutConsult from './components/sections/AboutConsult.vue';
     <main class="page__content">
       <IntroSection />
       <AboutSection />
-      <AboutConsult />
+      <ConsultReasonsSection />
+      <StepsSection />
     </main>
   </div>
 </template>
