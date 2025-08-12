@@ -43,6 +43,8 @@ const stepsList = [
 
 <style lang="scss" scoped>
 .steps {
+  padding-bottom: 130px !important;
+
   &__title {
     @include h2;
   }
@@ -81,13 +83,15 @@ const stepsList = [
     .invite__circle {
       width: 150px;
 
-      p {
+      :deep(p) {
         font-size: 14px;
       }
     }
   }
 
   @media (max-width: 767px) {
+    padding-bottom: 70px !important;
+
     &__subtitle {
       margin: 12px 0 40px;
     }
@@ -102,6 +106,10 @@ const stepsList = [
 
       &__circle {
         width: 130px;
+
+        :deep(p) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -121,7 +129,7 @@ const stepsList = [
       &__circle {
         width: 100px;
 
-        p {
+        :deep(p) {
           font-size: 10px;
         }
       }
@@ -137,6 +145,10 @@ const stepsList = [
         :deep(p) {
           font-size: 9px;
         }
+      }
+
+      &__price {
+        font-size: 10px;
       }
     }
   }

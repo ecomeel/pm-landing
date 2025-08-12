@@ -37,9 +37,11 @@ defineProps({
 
   &__circle {
     position: absolute;
-    bottom: -35%;
+    // bottom: -35%;
+    bottom: 0;
     left: 50%;
-    translate: -50%;
+    // translate: -50%;
+    translate: -50% 65%;
     background-color: #F5F5F5;
     border-radius: 100%;
     padding: 20px;
@@ -58,13 +60,11 @@ defineProps({
 
     &__circle {
       padding: 12px;
-      bottom: -40%;
     }
   }
 
   @media (max-width: 1023px) {
     &__circle {
-      bottom: -30%;
 
       &--inner {
         width: 150px;
@@ -81,7 +81,7 @@ defineProps({
 
     &__circle {
       padding: 4px;
-      bottom: -34%;
+      translate: -50% 70%;
 
       &--inner {
         width: 130px;
