@@ -8,6 +8,7 @@ import StepsSection from './components/sections/StepsSection.vue';
 import ConsultFormatSection from './components/sections/ConsultFormatSection.vue';
 import RequestSection from './components/sections/RequestSection.vue';
 import CaseSection from './components/sections/CaseSection.vue';
+import FooterPage from './components/FooterPage.vue';
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import CaseSection from './components/sections/CaseSection.vue';
       <RequestSection />
       <CaseSection />
     </main>
+    <FooterPage />
   </div>
 </template>
 

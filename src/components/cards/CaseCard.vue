@@ -97,7 +97,7 @@ defineProps({
   }
 
   &__underline {
-    height: 15px;
+    height: 12px;
     width: 60vw;
     background-color: $beige-color;
     align-self: flex-end;

@@ -72,19 +72,24 @@ const links = [
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 4.9vh 4.5vw 0;
+  padding: 4.5vh 4.5vw 0;
 
   @media (max-width: 1280px) {
-    padding: 20px 4.5vw 0;
+    padding: 50px 2vw 0;
   }
 
   @media (max-width: 767px) {
+    padding-top: 30px;
+    padding-right: 40px;
     left: initial;
     right: 0;
   }
 }
 
 .navigation {
+  @include text-mobile-background(50px);
+  padding: 8px 12px;
+
   &__list {
     display: flex;
     gap: 3.5vw
@@ -103,22 +108,31 @@ const links = [
   &__link {
     display: block;
     padding: 8px 16px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 1439px) {
+    &__link {
+      font-size: 18px;
+    }
   }
 
   @media (max-width: 1280px) {
     &__list {
-      gap: 20px;
+      gap: 16px;
     }
   }
 
   @media (max-width: 900px) {
+    padding: 8px 8px;
+
     &__list {
       gap: 10px
     }
 
     &__link {
       padding: 6px 12px;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
