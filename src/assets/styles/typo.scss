@@ -56,8 +56,16 @@
     font-size: 26px;
   }
 
+  @media (max-width: 1023px) {
+    font-size: 21px;
+  }
+
   @media (max-width: 767px) {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 549px) {
+    font-size: 16px;
   }
 }
 
@@ -77,6 +85,30 @@
   }
 
   @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+@mixin subtitle-bold {
+  font-family: "Stetica";
+  font-size: 1.82vw;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.04em;
+
+  @media (max-width: 1439px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 21px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 549px) {
     font-size: 16px;
   }
 }
@@ -102,6 +134,10 @@
   }
 
   @media (max-width: 767px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 549px) {
     font-size: 12px;
   }
 }

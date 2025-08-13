@@ -59,6 +59,8 @@ const additionalAdvantages: IInfoCard[] = [
   }
 
   @media (max-width: 767px) {
+    padding-bottom: 150px !important;
+    
     &__title {
       margin-bottom: 16px;
     }

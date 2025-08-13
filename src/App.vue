@@ -6,6 +6,8 @@ import ConsultReasonsSection from './components/sections/ConsultReasonsSection.v
 import AdditionalAdvantagesSection from './components/sections/AdditionalAdvantagesSection.vue';
 import StepsSection from './components/sections/StepsSection.vue';
 import ConsultFormatSection from './components/sections/ConsultFormatSection.vue';
+import RequestSection from './components/sections/RequestSection.vue';
+import CaseSection from './components/sections/CaseSection.vue';
 </script>
 
 <template>
@@ -18,6 +20,8 @@ import ConsultFormatSection from './components/sections/ConsultFormatSection.vue
       <StepsSection />
       <AdditionalAdvantagesSection />
       <ConsultFormatSection />
+      <RequestSection />
+      <CaseSection />
     </main>
   </div>
 </template>
@@ -34,6 +38,12 @@ import ConsultFormatSection from './components/sections/ConsultFormatSection.vue
     overflow: hidden;
     > * {
       padding: 0 5.59vw;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    &__content > * {
+      padding: 0 24px;
     }
   }
 

@@ -1,4 +1,6 @@
-@mixin text-mobile-background($round: 40px) {
-  background-color: rgba(255, 255, 255, 0.5);
+@mixin text-mobile-background($round: 40px, $opacity: 0.5) {
+  background-color: rgba(255, 255, 255, $opacity);
   border-radius: $round;
+  backdrop-filter: blur(2px); // степень размытия
+  -webkit-backdrop-filter: blur(10px); // для Safari
 }

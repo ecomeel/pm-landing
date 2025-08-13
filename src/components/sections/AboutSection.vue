@@ -1,6 +1,16 @@
 <script lang="ts" setup>
+import UiArrowList from '@/ui/UiArrowList.vue';
+
 defineOptions({ name: "AboutSection" });
 
+const facts = [
+  "<span>5 лет управляю проектами</span> в сфере онлайн-образования и инфобизнеса;",
+  "Работала с медийными личностями, блогерами и экспертами: <span>Сати Казанова, Мари Коткова, Александра Македонская, Дамир Мухамадиев</span> — от первых запусков до сложных экосистем;",
+  "<span>30+ реализованных</span> проектов;",
+  "<span>50+ млн</span> на запусках;",
+  "Управляла командой <span>40+ человек</span>;",
+  "Повышаю квалификацию у <span>Анны Самокатовой</span>.",
+]
 </script>
 
 <template>
@@ -19,14 +29,7 @@ defineOptions({ name: "AboutSection" });
     <div class="about__text-content">
       <h2 class="about__title">Пару слов о <span>себе</span></h2>
 
-      <ul class="about__list">
-        <li class="about__item"><span>5 лет управляю проектами</span> в сфере онлайн-образования и инфобизнеса;</li>
-        <li class="about__item">Работала с медийными личностями, блогерами и экспертами: <span>Сати Казанова, Мари Коткова, Александра Македонская, Дамир Мухамадиев</span> — от первых запусков до сложных экосистем;</li>
-        <li class="about__item"><span>30+ реализованных</span> проектов;</li>
-        <li class="about__item"><span>50+ млн</span> на запусках;</li>
-        <li class="about__item">Управляла командой <span>40+ человек</span>;</li>
-        <li class="about__item">Повышаю квалификацию у <span>Анны Самокатовой</span>.</li>
-      </ul>
+      <UiArrowList :list="facts" />
     </div>
   </section>
 </template>
@@ -66,30 +69,6 @@ defineOptions({ name: "AboutSection" });
     @include h2;
   }
 
-  &__list {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  &__item {
-    position: relative;
-    padding-left: 35px;
-    @include body-2;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      left: 0;
-      top: 0;
-      background: url("@/assets/images/icons/arrow.svg") center / contain no-repeat
-    }
-  }
-
   @media (max-width: 1440px) {
     gap: 70px;
 
@@ -103,19 +82,6 @@ defineOptions({ name: "AboutSection" });
 
     &__title {
       margin-bottom: 35px;
-    }
-
-    &__list {
-      gap: 20px
-    }
-
-    &__item {
-      padding-left: 25px;
-
-      &::before {
-        width: 16px;
-        height: 16px;
-      }
     }
   }
 
@@ -136,10 +102,6 @@ defineOptions({ name: "AboutSection" });
     &__title {
       margin-bottom: 20px;
     }
-
-    &__list {
-      gap: 16px
-    }
   }
 
   @media (max-width: 767px) {
@@ -147,19 +109,6 @@ defineOptions({ name: "AboutSection" });
 
     &__img {
       width: 200px;
-    }
-
-    &__list {
-      gap: 8px
-    }
-
-    &__item {
-      padding-left: 18px;
-
-      &::before {
-        width: 12px;
-        height: 12px;
-      }
     }
   }
 
