@@ -1,14 +1,16 @@
 <script lang="ts" setup>
+import { LINK } from '@/constants'; 
+
 defineOptions({ name: "UiCircleText" });
 </script>
 
 <template>
   <div class="circle-text">
     <img class="circle-text__circle" src="@/assets/images/circle-text.svg" alt="text">
-    <p class="circle-text__text">
+    <a :href="LINK.telegram" class="circle-text__text" target="_blank">
       <span>Хочу</span>
       <span>констультацию</span>
-    </p>
+    </a>
   </div>
 </template>
 

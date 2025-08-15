@@ -41,13 +41,13 @@ const workCases: ICase[] = [
 
 <style lang="scss" scoped>
 .cases {
-  padding-bottom: 120px !important;
+  padding-bottom: 120px;
   display: grid;
   gap: 10px;
 
   @media (max-width: 767px) {
     gap: 24px;
-    padding-bottom: 50px !important;
+    padding-bottom: 50px;
   }
 }
 </style>

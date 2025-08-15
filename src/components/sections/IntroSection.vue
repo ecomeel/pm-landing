@@ -137,8 +137,8 @@ defineOptions({ name: "IntroSection" });
       width: max-content;
       font-size: 42px;
       margin-top: 3.5vh;
-      padding: 8px 16px 12px 20px;
-      @include text-mobile-background(32px);
+      padding: 8px 12px 16px 14px;
+      @include text-mobile-background(26px);
 
       span {
         margin-top: 5px;
@@ -149,9 +149,9 @@ defineOptions({ name: "IntroSection" });
     &__description {
       margin-top: 20px;
       font-size: 16px;
-      max-width: 330px;
-      padding: 12px 0px 12px 24px;
-      @include text-mobile-background(30px);
+      max-width: 260px;
+      padding: 12px 12px 12px 14px;
+      @include text-mobile-background(26px);
     }
 
     &__long-arrow {

@@ -27,7 +27,7 @@ const reasons: IInfoCard[] = [
 </script>
 
 <template>
-  <section class="consult">
+  <section id="consult" class="consult">
     <h2 class="consult__title">
       Вам <span>нужно</span> на консультацию, если:
     </h2>
@@ -38,27 +38,28 @@ const reasons: IInfoCard[] = [
 
 <style lang="scss" scoped>
 .consult {
-  padding-bottom: 230px !important;
+  padding-top: 100px;
+  padding-bottom: 130px;
 
   &__title {
     margin-bottom: 40px;
     @include h2;
   }
 
-  @media (max-width: 1023px) {
-    padding-bottom: 200px !important;
+  @media (max-width: 1279px) {
+    padding-top: 120px;
+    padding-bottom: 110px;
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 150px !important;
-
     &__title {
       margin-bottom: 20px;
     }
   }
 
-  @media (max-width: 550px) {
-    padding-bottom: 70px !important;
+  @media (max-width: 549px) {
+    padding-bottom: 0;
+    padding-top: 50px;
   }
 }
 </style>

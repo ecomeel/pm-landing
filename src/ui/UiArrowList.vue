@@ -30,6 +30,10 @@ defineProps({
     padding-left: 35px;
     @include body-2;
 
+    ::v-deep(span) {
+      font-weight: 500;
+    }
+
     &::before {
       content: "";
       position: absolute;

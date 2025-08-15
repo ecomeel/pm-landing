@@ -21,3 +21,42 @@
     color: $black-color;
   }
 }
+
+.n-drawer {
+  max-width: 300px;
+  width: unset !important;
+  --n-header-border-bottom: 1px solid #878787;
+  --n-close-color-hover: transparent;
+
+  &-content {
+    background-color: #F5F5F5;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li > a {
+        @include h2;
+        font-size: 26px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 549px) {
+  .n-icon {
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .n-button {
+    width: 43px;
+    height: 41px;
+  }
+}

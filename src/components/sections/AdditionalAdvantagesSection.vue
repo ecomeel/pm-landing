@@ -9,7 +9,7 @@ const additionalAdvantages: IInfoCard[] = [
     title: "Если ты только начинаешь свой путь в онлайне",
     list: [
       "Шаблон резюме",
-      "Чек-лист «Как выйти на первые проекты»: что знать, где искать, как подать себя и тд",
+      "Чек-лист <span>«Как выйти на первые проекты»</span>: что знать, где искать, как подать себя и тд",
     ]
   },
   {
@@ -33,7 +33,7 @@ const additionalAdvantages: IInfoCard[] = [
 
 <style lang="scss" scoped>
 .additional {
-  padding-bottom: 230px !important;
+  padding-bottom: 230px;
 
   &__title {
     max-width: 75vw;
@@ -55,11 +55,11 @@ const additionalAdvantages: IInfoCard[] = [
   }
 
   @media (max-width: 1023px) {
-    padding-bottom: 200px !important;
+    padding-bottom: 200px;
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 150px !important;
+    padding-bottom: 150px;
     
     &__title {
       margin-bottom: 16px;
@@ -75,7 +75,7 @@ const additionalAdvantages: IInfoCard[] = [
   }
 
   @media (max-width: 550px) {
-    padding-bottom: 70px !important;
+    padding-bottom: 70px;
 
     &__title {
       max-width: 400px;

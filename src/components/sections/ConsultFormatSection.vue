@@ -5,7 +5,7 @@ defineOptions({ name: "ConsultFormatSection" });
 </script>
 
 <template>
-  <section class="consult">
+  <section id="format" class="consult">
     <div class="consult__text-content">
       <h2 class="consult__title">Формат консультаций <span>появился не случайно</span></h2>
       <p class="consult__description"><span>Ко мне регулярно обращаются</span> коллеги, друзья и специалисты из других команд с вопросами о работе проджект-менеджера, развитии в онлайне и карьерных переходах</p>
@@ -30,7 +30,7 @@ defineOptions({ name: "ConsultFormatSection" });
   display: flex;
   justify-content: flex-end;
   position: relative;
-  padding: 60px 5.59vw !important;
+  padding: 60px 5.59vw;
 
   &__text-content {
     position: relative;
@@ -87,7 +87,7 @@ defineOptions({ name: "ConsultFormatSection" });
   }
 
   @media (max-width: 1023px) {
-    padding: 35px 5.59vw !important;
+    padding: 35px 5.59vw;
 
     &__text-content {
       gap: 20px;
@@ -107,7 +107,7 @@ defineOptions({ name: "ConsultFormatSection" });
   }
 
   @media (max-width: 767px) {
-    padding: 20px 24px !important;
+    padding: 20px 24px;
 
     &__text-content {
       padding: 16px;
@@ -133,7 +133,7 @@ defineOptions({ name: "ConsultFormatSection" });
   }
 
   @media (max-width: 549px) {
-    padding: 12px 24px !important;
+    padding: 12px 24px;
 
     &__bg {
       object-position: 20%;

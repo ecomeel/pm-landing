@@ -39,19 +39,29 @@ import FooterPage from './components/FooterPage.vue';
   &__content {
     overflow: hidden;
     > * {
-      padding: 0 5.59vw;
+      // padding: 0 5.59vw;
+      padding: {
+        left: 5.59vw;
+        right: 5.59vw;
+      };
     }
   }
 
   @media (max-width: 1023px) {
     &__content > * {
-      padding: 0 24px;
+      // padding: 0 24px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 
   @media (max-width: 549px) {
     &__content > * {
-      padding: 0 16px;
+      padding: {
+        left: 16px;
+        right: 16px;
+      };
+      // padding: 0 16px;
     }
   }
 }

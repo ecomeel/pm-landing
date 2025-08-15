@@ -14,7 +14,7 @@ const facts = [
 </script>
 
 <template>
-  <section class="about">
+  <section id="about" class="about">
     <div class="about__img-wrapper">
       <picture>
         <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-2.webp" type="image/webp">
@@ -36,8 +36,7 @@ const facts = [
 
 <style lang="scss" scoped>
 .about {
-  padding-top: 120px !important;
-  padding-bottom: 100px !important;
+  padding-top: 120px;
   display: flex;
   align-items: center;
   gap: 6.25vw;
@@ -86,11 +85,6 @@ const facts = [
   }
 
   @media (max-width: 1279px) {
-    padding: {
-      top: 120px !important;
-      bottom: 120px !important;
-    };
-
     &__img {
       width: 300px;
     }
@@ -112,14 +106,13 @@ const facts = [
     }
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 549px) {
     gap: 30px;
-    padding: {
-      top: 50px !important;
-      bottom: 50px !important;
-    };
+    padding-top: 50px;
 
     &__img-wrapper {
+      display: none;
+      
       &::after {
         left: 10px;
         top: -15px;

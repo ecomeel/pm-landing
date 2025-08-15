@@ -15,24 +15,28 @@ const isMobileSize = computed(() => width.value < 768);
 const links = [
   {
     name: "Главная",
-    link: "",
+    link: "#",
   },
   {
     name: "Обо мне",
-    link: "",
+    link: "#about",
   },
   {
     name: "Про консультации",
-    link: "",
+    link: "#consult",
   },
   {
     name: "Этапы работы",
-    link: "",
+    link: "#steps",
   },
   {
-    name: "Кто приходит",
-    link: "",
+    name: "Формат работы",
+    link: "#format",
   },
+  // {
+  //   name: "Кто приходит",
+  //   link: "",
+  // },
 ]
 </script>
 
@@ -54,11 +58,21 @@ const links = [
     </NButton>
 
     <!-- Меню сбоку -->
-    <NDrawer v-if="isMobileSize" v-model:show="showMenu" placement="left" :width="240">
-      <NDrawerContent title="Меню">
+    <NDrawer
+      v-if="isMobileSize" 
+      v-model:show="showMenu" 
+      placement="left" 
+      :width="240"
+    >
+      <NDrawerContent closable title="Меню">
         <ul class="space-y-2">
           <li v-for="link in links" :key="link.name">
-            <a :href="link.link" class="text-blue-600 hover:underline">{{ link.name }}</a>
+            <a 
+              @click="showMenu = false" 
+              :href="link.link" 
+            >
+              {{ link.name }}
+            </a>
           </li>
         </ul>
       </NDrawerContent>
@@ -75,7 +89,7 @@ const links = [
   padding: 4.5vh 4.5vw 0;
 
   @media (max-width: 1280px) {
-    padding: 50px 2vw 0;
+    padding: 30px 3.6vw 0;
   }
 
   @media (max-width: 767px) {
@@ -84,11 +98,19 @@ const links = [
     left: initial;
     right: 0;
   }
+
+  @media (max-width: 549px) {
+    padding: {
+      top: 25px;
+      right: 25px;
+    };
+  }
 }
 
 .navigation {
-  @include text-mobile-background(50px);
+  @include text-mobile-background(50px, 0.35);
   padding: 8px 12px;
+  box-shadow: 5px 5px 20px rgba(grey, $alpha: 0.5);
 
   &__list {
     display: flex;
@@ -107,7 +129,7 @@ const links = [
 
   &__link {
     display: block;
-    padding: 8px 16px;
+    padding: 4px 12px;
     font-size: 20px;
   }
 

@@ -25,7 +25,7 @@ const stepsList = [
 </script>
 
 <template>
-  <section class="steps">
+  <section id="steps" class="steps">
     <h2 class="steps__title">Этапы <span>нашей</span> работы</h2>
     <p class="steps__subtitle">Чтобы консультация была максимально полезной, мы работаем по структуре</p>
 
@@ -43,7 +43,8 @@ const stepsList = [
 
 <style lang="scss" scoped>
 .steps {
-  padding-bottom: 130px !important;
+  padding-top: 100px;
+  padding-bottom: 130px;
 
   &__title {
     @include h2;
@@ -75,7 +76,13 @@ const stepsList = [
     }
   }
 
+  @media (max-width: 1279px) {
+    padding-top: 90px;
+  }
+
   @media (max-width: 1023px) {
+    padding-bottom: 90px;
+    
     &__subtitle {
       margin: 20px 0 50px;
     }
@@ -90,8 +97,9 @@ const stepsList = [
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 70px !important;
-
+    padding-top: 60px;
+    padding-bottom: 70px;
+    
     &__subtitle {
       margin: 12px 0 40px;
     }
@@ -115,6 +123,8 @@ const stepsList = [
   }
 
   @media (max-width: 549px) {
+    padding-top: 70px;
+
     &__subtitle {
       margin-bottom: 26px;
     }
