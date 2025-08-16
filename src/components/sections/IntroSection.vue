@@ -116,7 +116,7 @@ defineOptions({ name: "IntroSection" });
     .header {
       gap: 8px;
       padding-top: 50px;
-      margin-left: 20px;
+      margin-left: 16px;
 
       &__title {
         text-decoration-thickness: 1px;
@@ -171,7 +171,7 @@ defineOptions({ name: "IntroSection" });
 
   @media (max-width: 549px) {
     .header {
-      padding-top: 30px;
+      padding-top: 37px;
 
       &__title {
         font-size: 24px;
@@ -199,6 +199,10 @@ defineOptions({ name: "IntroSection" });
   }
 
   @media (max-width: 440px) {
+    .header {
+      margin-left: 14px;
+    }
+
     &__bg {
       object-position: 67%;
     }
