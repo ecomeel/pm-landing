@@ -1,26 +1,50 @@
 <script lang="ts" setup>
-import UiCircleText from '@/ui/UiCircleText.vue';
+import UiCircleText from '@/ui/UiCircleText.vue'
+import { animate } from 'animejs';
+import { onMounted } from 'vue';
 
 defineOptions({ name: "IntroSection" });
+
+onMounted(() => {
+  animate(".header", {
+    delay: 100,
+    x: "100vw",
+  });
+
+  animate(".intro__subtitle", {
+    delay: 400,
+    x: "100vw",
+  });
+
+  animate(".intro__description", {
+    delay: 500,
+    x: "100vw"
+  });
+
+  animate(".intro__consult", {
+    delay: 700,
+    x: "100vw",
+  });
+})
 </script>
 
 <template>
-  <section class="intro">
-    <header class="intro__header header">
-      <h1 class="header__title">Гущина Анастасия</h1>
+  <section id="intro" class="intro">
+    <header class="intro__header header -left-[100vw]">
+      <h1 class="header__title main-medium">Гущина Анастасия</h1>
       <img class="header__arrow" src="@/assets/images/icons/arrow-right-bottom.svg" alt="arrow icon">
     </header>
 
-    <h2 class="intro__subtitle">
-      Проджект-менеджер 
+    <h2 class="intro__subtitle -left-[100vw]">
+      Проджект-менеджер
       <span>крупных онлайн-проектов</span>
     </h2>
 
-    <p class="intro__description">
+    <p class="intro__description -left-[100vw]">
       Провожу <b>консультации</b> для&nbsp;тех, кто&nbsp;начинает свой путь в&nbsp;онлайне и&nbsp;для&nbsp;опытных проджект&#8209;менеджеров, которые хотят уверенно расти в&nbsp;онлайн-среде: <b>системно, спокойно и&nbsp;без&nbsp;выгорания</b>
     </p>
 
-    <div class="intro__consult">
+    <div class="intro__consult -left-[100vw]">
       <img class="intro__long-arrow" src="@/assets/images/icons/long-arrow.svg" alt="arrow icon">
 
       <UiCircleText />
@@ -68,6 +92,7 @@ defineOptions({ name: "IntroSection" });
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: 4px;
+
       @include main-medium;
     }
 
@@ -213,7 +238,7 @@ defineOptions({ name: "IntroSection" });
 
     &__subtitle {
       font-size: 26px;
-      
+
       span {
         font-size: 20px;
       }

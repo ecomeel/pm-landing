@@ -1,0 +1,15 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
+
+@theme {
+  --breakpoint-s: 550px;
+}
+
+@base {}
+
+@layer components {
+
+}

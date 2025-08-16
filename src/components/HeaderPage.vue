@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { NDrawer, NDrawerContent, NButton, NIcon } from 'naive-ui'
 import { MenuOutline } from '@vicons/ionicons5'
 import { useWindowSize } from '@vueuse/core';
+import { animate } from 'animejs';
 
 defineOptions({ name: "HeaderPage" });
 
@@ -15,7 +16,7 @@ const isMobileSize = computed(() => width.value < 768);
 const links = [
   {
     name: "Главная",
-    link: "#",
+    link: "#intro",
   },
   {
     name: "Обо мне",
@@ -33,19 +34,26 @@ const links = [
     name: "Формат работы",
     link: "#format",
   },
-  // {
-  //   name: "Кто приходит",
-  //   link: "",
-  // },
 ]
+
+onMounted(() => {
+  animate("#navigation", {
+    y: "100vw"
+  })
+})
 </script>
 
 <template>
-  <header class="header">
-    <nav v-if="!isMobileSize" class="header__navigation navigation">
-      <ul class="navigation__list">
+  <header class="fixed z-10 top-[27px] right-[16px]
+    s:right-[24px]
+    md:right-[initial] md:left-[2.5vw] md:top-[40px]
+    lg:left-[3.6vw]
+    "
+  >
+    <nav v-if="!isMobileSize" id="navigation" class="p-2 bg-white/50 rounded-full backdrop-blur-xs shadow-lg lg:px-4 lg:py-2 -top-[100vw] relative">
+      <ul class="navigation__list flex gap-[10px] lg:gap-4 xl:gap-[3.5vw]">
         <li class="navigation__item" v-for="link in links" :key="link.name">
-          <a class="navigation__link" :href="link.link">{{ link.name }}</a>
+          <a class="navigation__link block px-3 text-base lg:text-lg xl:text-[1.39vw]" :href="link.link">{{ link.name }}</a>
         </li>
       </ul>
     </nav>
@@ -59,17 +67,17 @@ const links = [
 
     <!-- Меню сбоку -->
     <NDrawer
-      v-if="isMobileSize" 
-      v-model:show="showMenu" 
-      placement="left" 
+      v-if="isMobileSize"
+      v-model:show="showMenu"
+      placement="left"
       :width="240"
     >
       <NDrawerContent closable title="Меню">
         <ul class="space-y-2">
           <li v-for="link in links" :key="link.name">
-            <a 
-              @click="showMenu = false" 
-              :href="link.link" 
+            <a
+              @click="showMenu = false"
+              :href="link.link"
             >
               {{ link.name }}
             </a>
@@ -80,43 +88,8 @@ const links = [
   </header>
 </template>
 
-<style lang="scss" scoped>
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding: 4.5vh 4.5vw 0;
-
-  @media (max-width: 1280px) {
-    padding: 30px 3.6vw 0;
-  }
-
-  @media (max-width: 767px) {
-    padding-top: 30px;
-    padding-right: 40px;
-    left: initial;
-    right: 0;
-  }
-
-  @media (max-width: 549px) {
-    padding: {
-      top: 25px;
-      right: 25px;
-    };
-  }
-}
-
+<style lang="scss">
 .navigation {
-  @include text-mobile-background(50px, 0.35);
-  padding: 8px 12px;
-  box-shadow: 5px 5px 20px rgba(grey, $alpha: 0.5);
-
-  &__list {
-    display: flex;
-    gap: 3.5vw
-  }
-
   &__item {
     border: 1px solid transparent;
     border-radius: 30px;
@@ -124,37 +97,6 @@ const links = [
 
     &:hover {
       border-color: $black-color;
-    }
-  }
-
-  &__link {
-    display: block;
-    padding: 4px 12px;
-    font-size: 20px;
-  }
-
-  @media (max-width: 1439px) {
-    &__link {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 1280px) {
-    &__list {
-      gap: 16px;
-    }
-  }
-
-  @media (max-width: 900px) {
-    padding: 8px 8px;
-
-    &__list {
-      gap: 10px
-    }
-
-    &__link {
-      padding: 6px 12px;
-      font-size: 16px;
     }
   }
 }
