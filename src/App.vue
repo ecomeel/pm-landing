@@ -8,6 +8,7 @@ import StepsSection from './components/sections/StepsSection.vue';
 import ConsultFormatSection from './components/sections/ConsultFormatSection.vue';
 import RequestSection from './components/sections/RequestSection.vue';
 import CaseSection from './components/sections/CaseSection.vue';
+import ReviewsSection from './components/sections/ReviewsSection.vue';
 import FooterPage from './components/FooterPage.vue';
 </script>
 
@@ -23,6 +24,7 @@ import FooterPage from './components/FooterPage.vue';
       <ConsultFormatSection />
       <RequestSection />
       <CaseSection />
+      <ReviewsSection />
     </main>
     <FooterPage />
   </div>
@@ -49,7 +51,6 @@ import FooterPage from './components/FooterPage.vue';
 
   @media (max-width: 1023px) {
     &__content > * {
-      // padding: 0 24px;
       padding-left: 24px;
       padding-right: 24px;
     }
@@ -61,7 +62,6 @@ import FooterPage from './components/FooterPage.vue';
         left: 16px;
         right: 16px;
       };
-      // padding: 0 16px;
     }
   }
 }

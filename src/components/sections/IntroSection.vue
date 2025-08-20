@@ -6,11 +6,6 @@ import { onMounted } from 'vue';
 defineOptions({ name: "IntroSection" });
 
 onMounted(() => {
-  animate(".header", {
-    delay: 100,
-    x: "100vw",
-  });
-
   animate(".intro__subtitle", {
     delay: 400,
     x: "100vw",
@@ -30,8 +25,8 @@ onMounted(() => {
 
 <template>
   <section id="intro" class="intro">
-    <header class="intro__header header -left-[100vw]">
-      <h1 class="header__title main-medium">Гущина Анастасия</h1>
+    <header class="intro__header header overflow-clip inline-block">
+      <h1 class="header__title main-medium inline-block">Гущина Анастасия</h1>
       <img class="header__arrow" src="@/assets/images/icons/arrow-right-bottom.svg" alt="arrow icon">
     </header>
 
