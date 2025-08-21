@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { IInfoCard } from '@/types';
-import InfoBlock from '../InfoBlock.vue';
+import type { IInfoCard } from '@/types'
+import InfoBlock from '../InfoBlock.vue'
 
-defineOptions({ name: "ConsultReasonsSection" });
+defineOptions({ name: "ConsultReasonsSection" })
 
 const reasons: IInfoCard[] = [
   {
@@ -32,7 +32,7 @@ const reasons: IInfoCard[] = [
       Вам <span>нужно</span> на консультацию, если:
     </h2>
 
-    <InfoBlock class="consult__reasons" :cards="reasons" />
+    <InfoBlock :cards="reasons" class="consult__reasons" />
   </section>
 </template>
 

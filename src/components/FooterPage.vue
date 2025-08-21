@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import mailIcon from "@/assets/images/icons/mail-icon.svg";
-import tgIcon from "@/assets/images/icons/telegram-icon.svg";
+import mailIcon from "@/assets/images/icons/mail-icon.svg"
+import tgIcon from "@/assets/images/icons/telegram-icon.svg"
 
-defineOptions({ name: "FooterPage" });
+defineOptions({ name: "FooterPage" })
 
 const socials = [
   {
@@ -30,8 +30,13 @@ const socials = [
       <a href="">Публичная оферта</a>
     </div>
     <div class="footer__links">
-      <a class="footer__social" :href="social.link" v-for="(social, index) in socials" :key="index">
-        <img :src="social.icon" :alt="social.name">
+      <a
+        v-for="(social, index) in socials"
+        :key="index"
+        class="footer__social"
+        :href="social.link"
+      >
+        <img :alt="social.name" :src="social.icon">
       </a>
     </div>
   </footer>

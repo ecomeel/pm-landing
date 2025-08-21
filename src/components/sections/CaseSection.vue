@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { ICase } from '@/types';
-import CaseCard from '../cards/CaseCard.vue';
+import type { ICase } from '@/types'
+import CaseCard from '../cards/CaseCard.vue'
 import caseImage1 from "@/assets/images/cases/case-1.jpg"
 import caseImage2 from "@/assets/images/cases/case-2.jpg"
 
-defineOptions({ name: "CaseSection" });
+defineOptions({ name: "CaseSection" })
 
 const workCases: ICase[] = [
   {
@@ -30,11 +30,11 @@ const workCases: ICase[] = [
 
 <template>
   <section class="cases">
-    <CaseCard 
+    <CaseCard
       v-for="(item, idx) in workCases"
-      :key="idx" 
-      :work-case="item"
+      :key="idx"
       :case-number="idx + 1"
+      :work-case="item"
     />
   </section>
 </template>

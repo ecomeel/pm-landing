@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
-import { NDrawer, NDrawerContent, NButton, NIcon } from 'naive-ui'
+import { computed, onMounted, ref } from 'vue'
+import { NButton, NDrawer, NDrawerContent, NIcon } from 'naive-ui'
 import { MenuOutline } from '@vicons/ionicons5'
-import { useWindowSize } from '@vueuse/core';
-import { animate } from 'animejs';
+import { useWindowSize } from '@vueuse/core'
+import { animate } from 'animejs'
 
-defineOptions({ name: "HeaderPage" });
+defineOptions({ name: "HeaderPage" })
 
-const { width } = useWindowSize();
+const { width } = useWindowSize()
 
-const showMenu = ref(false);
+const showMenu = ref(false)
 
-const isMobileSize = computed(() => width.value < 768);
+const isMobileSize = computed(() => width.value < 768)
 
 const links = [
   {
@@ -44,22 +44,36 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="fixed z-10 top-[27px] right-[16px]
+  <header
+    class="fixed z-10 top-[27px] right-[16px]
     s:right-[24px]
     md:right-[initial] md:left-[2.5vw] md:top-[40px]
     lg:left-[3.6vw]
     "
   >
-    <nav v-if="!isMobileSize" id="navigation" class="p-2 bg-white/50 rounded-full backdrop-blur-xs shadow-lg lg:px-4 lg:py-2 -top-[100vw] relative">
+    <nav
+      v-if="!isMobileSize"
+      id="navigation"
+      class="p-2 bg-white/50 rounded-full backdrop-blur-xs shadow-lg lg:px-4 lg:py-2 -top-[100vw] relative"
+    >
       <ul class="navigation__list flex gap-[10px] lg:gap-4 xl:gap-[3.5vw]">
-        <li class="navigation__item" v-for="link in links" :key="link.name">
+        <li
+          v-for="link in links"
+          :key="link.name"
+          class="navigation__item"
+        >
           <a class="navigation__link block px-3 text-base lg:text-lg xl:text-[1.39vw]" :href="link.link">{{ link.name }}</a>
         </li>
       </ul>
     </nav>
 
     <!-- Кнопка бургер -->
-    <NButton v-if="isMobileSize" quaternary circle @click="showMenu = true">
+    <NButton
+      v-if="isMobileSize"
+      circle
+      quaternary
+      @click="showMenu = true"
+    >
       <NIcon>
         <MenuOutline />
       </NIcon>
@@ -76,8 +90,8 @@ onMounted(() => {
         <ul class="space-y-2">
           <li v-for="link in links" :key="link.name">
             <a
-              @click="showMenu = false"
               :href="link.link"
+              @click="showMenu = false"
             >
               {{ link.name }}
             </a>

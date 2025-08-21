@@ -1,26 +1,48 @@
 <script lang="ts" setup>
-import UiCircleText from '@/ui/UiCircleText.vue';
+import UiCircleText from '@/ui/UiCircleText.vue'
 
-defineOptions({ name: "ConsultFormatSection" });
+defineOptions({ name: "ConsultFormatSection" })
 </script>
 
 <template>
   <section id="format" class="consult">
     <div class="consult__text-content">
-      <h2 class="consult__title">Формат консультаций <span>появился не случайно</span></h2>
-      <p class="consult__description"><span>Ко мне регулярно обращаются</span> коллеги, друзья и специалисты из других команд с вопросами о работе проджект-менеджера, развитии в онлайне и карьерных переходах</p>
-      <p class="consult__description"><span>Я поняла, что могу быть полезна не только точечно, но и комплексно</span> — так родилась идея индивидуальных консультаций</p>
+      <h2 class="consult__title">
+        Формат консультаций <span>появился не случайно</span>
+      </h2>
+      <p class="consult__description">
+        <span>Ко мне регулярно обращаются</span> коллеги, друзья и специалисты из других команд с вопросами о работе проджект-менеджера, развитии в онлайне и карьерных переходах
+      </p>
+      <p class="consult__description">
+        <span>Я поняла, что могу быть полезна не только точечно, но и комплексно</span> — так родилась идея индивидуальных консультаций
+      </p>
       <div class="consult__invite">
         <UiCircleText class="consult__circle" />
-        <img class="consult__arrow" src="@/assets/images/icons/long-arrow.svg" alt="arrow icon" />
+        <img
+          alt="arrow icon"
+          class="consult__arrow"
+          src="@/assets/images/icons/long-arrow.svg"
+        >
       </div>
     </div>
 
     <picture>
-      <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-3.webp" type="image/webp">
+      <source
+        media="(min-width: 768px)"
+        srcset="@/assets/images/background/preview-3.webp"
+        type="image/webp"
+      >
       <source srcset="@/assets/images/background/preview-3_mobile.webp" type="image/webp">
-      <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-3.jpg" type="image/jpg">
-      <img class="consult__bg" src="@/assets/images/background/preview-3_mobile.jpg" alt="preview">
+      <source
+        media="(min-width: 768px)"
+        srcset="@/assets/images/background/preview-3.jpg"
+        type="image/jpg"
+      >
+      <img
+        alt="preview"
+        class="consult__bg"
+        src="@/assets/images/background/preview-3_mobile.jpg"
+      >
     </picture>
   </section>
 </template>
@@ -78,7 +100,7 @@ defineOptions({ name: "ConsultFormatSection" });
   }
 
   @media (max-width: 1439px) {
-    
+
     &__text-content {
       padding: 20px;
       transform: translateX(4vw);

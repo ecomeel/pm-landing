@@ -1,13 +1,21 @@
 <script lang="ts" setup>
-import { LINK } from '@/constants'; 
+import { LINK } from '@/constants'
 
-defineOptions({ name: "UiCircleText" });
+defineOptions({ name: "UiCircleText" })
 </script>
 
 <template>
   <div class="circle-text">
-    <img class="circle-text__circle" src="@/assets/images/circle-text.svg" alt="text">
-    <a :href="LINK.telegram" class="circle-text__text" target="_blank">
+    <img
+      alt="text"
+      class="circle-text__circle"
+      src="@/assets/images/circle-text.svg"
+    >
+    <a
+      class="circle-text__text"
+      :href="LINK.telegram"
+      target="_blank"
+    >
       <span>Хочу</span>
       <span>констультацию</span>
     </a>

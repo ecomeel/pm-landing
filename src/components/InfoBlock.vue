@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue';
-import InfoCard from './cards/InfoCard.vue';
-import type { IInfoCard } from '@/types';
-import UiCircleText from '@/ui/UiCircleText.vue';
+import type { PropType } from 'vue'
+import InfoCard from './cards/InfoCard.vue'
+import type { IInfoCard } from '@/types'
+import UiCircleText from '@/ui/UiCircleText.vue'
 
-defineOptions({ name: "InfoBlock" });
+defineOptions({ name: "InfoBlock" })
 
 defineProps({
   cards: {
@@ -16,10 +16,10 @@ defineProps({
 
 <template>
   <div class="info">
-    <InfoCard 
-      v-for="(card, index) in cards" 
-      :key="index" 
-      :card="card" 
+    <InfoCard
+      v-for="(card, index) in cards"
+      :key="index"
+      :card="card"
       :cut-corner-position="index ? 'left' : 'right'"
     />
     <div class="info__circle">
@@ -96,7 +96,7 @@ defineProps({
   @media (max-width: 549px) {
     grid-template-columns: 1fr;
 
-    
+
     > *:not(:last-child) {
       width: 80vw;
 

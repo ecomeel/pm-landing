@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import UiCircleText from '@/ui/UiCircleText.vue'
-import { animate } from 'animejs';
-import { onMounted } from 'vue';
+import { animate } from 'animejs'
+import { onMounted } from 'vue'
 
-defineOptions({ name: "IntroSection" });
+defineOptions({ name: "IntroSection" })
 
 onMounted(() => {
   animate(".intro__header", {
@@ -14,25 +14,31 @@ onMounted(() => {
   animate(".intro__subtitle", {
     delay: 200,
     x: "100vw",
-  });
+  })
 
   animate(".intro__description", {
     delay: 300,
     x: "100vw"
-  });
+  })
 
   animate(".intro__consult", {
     delay: 400,
     x: "100vw",
-  });
+  })
 })
 </script>
 
 <template>
   <section id="intro" class="intro">
     <header class="intro__header header overflow-clip inline-block -left-[100vw]">
-      <h1 class="header__title main-medium inline-block">Гущина Анастасия</h1>
-      <img class="header__arrow" src="@/assets/images/icons/arrow-right-bottom.svg" alt="arrow icon">
+      <h1 class="header__title main-medium inline-block">
+        Гущина Анастасия
+      </h1>
+      <img
+        alt="arrow icon"
+        class="header__arrow"
+        src="@/assets/images/icons/arrow-right-bottom.svg"
+      >
     </header>
 
     <h2 class="intro__subtitle -left-[100vw]">
@@ -45,16 +51,32 @@ onMounted(() => {
     </p>
 
     <div class="intro__consult -left-[100vw]">
-      <img class="intro__long-arrow" src="@/assets/images/icons/long-arrow.svg" alt="arrow icon">
+      <img
+        alt="arrow icon"
+        class="intro__long-arrow"
+        src="@/assets/images/icons/long-arrow.svg"
+      >
 
       <UiCircleText />
     </div>
 
     <picture>
-      <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-1.webp" type="image/webp">
+      <source
+        media="(min-width: 768px)"
+        srcset="@/assets/images/background/preview-1.webp"
+        type="image/webp"
+      >
       <source srcset="@/assets/images/background/preview-1_mobile.webp" type="image/webp">
-      <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-1.jpg" type="image/jpg">
-      <img class="intro__bg" src="@/assets/images/background/preview-1_mobile.jpg" alt="preview">
+      <source
+        media="(min-width: 768px)"
+        srcset="@/assets/images/background/preview-1.jpg"
+        type="image/jpg"
+      >
+      <img
+        alt="preview"
+        class="intro__bg"
+        src="@/assets/images/background/preview-1_mobile.jpg"
+      >
     </picture>
   </section>
 </template>

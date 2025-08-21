@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue';
-import type { IInfoCard } from '@/types';
-import UiSquareList from '@/ui/UiSquareList.vue';
+import type { PropType } from 'vue'
+import type { IInfoCard } from '@/types'
+import UiSquareList from '@/ui/UiSquareList.vue'
 
-defineOptions({ name: "InfoCard" });
+defineOptions({ name: "InfoCard" })
 
 defineProps({
   card: {
@@ -34,8 +34,8 @@ defineProps({
       <h3>{{ card.title }}</h3>
     </header>
 
-    <div 
-      class="card__body" 
+    <div
+      class="card__body"
       :class="[
         { card__body_bordered: withBorderBody },
         { card__body_transparent: noBodyBackground }

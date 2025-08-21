@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue';
+import { type PropType } from 'vue'
 
-defineOptions({ name: "UiArrowList" });
+defineOptions({ name: "UiArrowList" })
 
 defineProps({
   list: {
@@ -12,8 +12,14 @@ defineProps({
 </script>
 
 <template>
-  <ul class="list">
-    <li v-for="(item, index) in list" :key="index" class="list__item" v-html="item" />
+  <!-- <ul id="arrowList" class="list relative -left-[100vw]"> -->
+  <ul id="arrowList" class="list">
+    <li
+      v-for="(item, index) in list"
+      :key="index"
+      class="list__item"
+      v-html="item"
+    />
   </ul>
 </template>
 

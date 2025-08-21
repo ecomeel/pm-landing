@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import UiCircleText from '@/ui/UiCircleText.vue';
-import UiNumberedList from '@/ui/UiNumberedList.vue';
+import UiCircleText from '@/ui/UiCircleText.vue'
+import UiNumberedList from '@/ui/UiNumberedList.vue'
 
-defineOptions({ name: "StepsSection" });
+defineOptions({ name: "StepsSection" })
 
 const stepsList = [
   {
@@ -26,15 +26,21 @@ const stepsList = [
 
 <template>
   <section id="steps" class="steps">
-    <h2 class="steps__title">Этапы <span>нашей</span> работы</h2>
-    <p class="steps__subtitle">Чтобы консультация была максимально полезной, мы работаем по структуре</p>
+    <h2 class="steps__title">
+      Этапы <span>нашей</span> работы
+    </h2>
+    <p class="steps__subtitle">
+      Чтобы консультация была максимально полезной, мы работаем по структуре
+    </p>
 
     <UiNumberedList :list="stepsList" />
 
     <div class="steps__invite invite">
-      <p class="invite__price">Стоимость консультации - 5000₽</p>
+      <p class="invite__price">
+        Стоимость консультации - 5000₽
+      </p>
       <div class="invite__arrow">
-        <img src="@/assets/images/icons/long-arrow.svg" alt="arrow icon">
+        <img alt="arrow icon" src="@/assets/images/icons/long-arrow.svg">
       </div>
       <UiCircleText class="invite__circle" />
     </div>
@@ -82,11 +88,11 @@ const stepsList = [
 
   @media (max-width: 1023px) {
     padding-bottom: 90px;
-    
+
     &__subtitle {
       margin: 20px 0 50px;
     }
-    
+
     .invite__circle {
       width: 150px;
 
@@ -99,7 +105,7 @@ const stepsList = [
   @media (max-width: 767px) {
     padding-top: 60px;
     padding-bottom: 70px;
-    
+
     &__subtitle {
       margin: 12px 0 40px;
     }

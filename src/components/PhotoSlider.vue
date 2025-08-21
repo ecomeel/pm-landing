@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 // import { Navigation } from 'swiper'
-import { Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import sliderArrowBtn from "@/assets/images/icons/slider-arrow-btn.svg";
-import { useWindowSize } from '@vueuse/core';
+import sliderArrowBtn from "@/assets/images/icons/slider-arrow-btn.svg"
+import { useWindowSize } from '@vueuse/core'
 
-defineOptions({ name: "PhotoSlider" });
+defineOptions({ name: "PhotoSlider" })
 
 defineProps<{
   slides: string[]
 }>()
 
-const { width } = useWindowSize();
+const { width } = useWindowSize()
 
 const slidesPerView = computed(() => {
   if (width.value > 767) {
@@ -26,43 +26,47 @@ const slidesPerView = computed(() => {
   }
 
   return 1
-});
+})
 </script>
 
 <template>
   <div class="photo-slider__container">
     <button
-      type="button"
-      class="photo-slider__btn photo-slider__btn_prev"
       id="prevPhotoSlide"
+      class="photo-slider__btn photo-slider__btn_prev"
+      type="button"
     >
-      <img :src="sliderArrowBtn" alt="sliderPrevBtn">
+      <img alt="sliderPrevBtn" :src="sliderArrowBtn">
     </button>
     <Swiper
+      class="photo-slider"
+      loop
       :modules="[ Navigation ]"
-      space-between="8"
-      :slides-per-view="slidesPerView"
       :navigation="{
         prevEl: '#prevPhotoSlide',
         nextEl: '#nextPhotoSlide',
       }"
-      loop
-      class="photo-slider"
+      :slides-per-view="slidesPerView"
+      space-between="8"
     >
       <SwiperSlide
-        class="photo-slider__slide"
         v-for="(slide, index) in slides"
         :key="slide.slice(0, 6) + index"
+        class="photo-slider__slide"
       >
-        <img :src="slide" class="photo-slider__image" alt="Отзыв о работе">
+        <img
+          alt="Отзыв о работе"
+          class="photo-slider__image"
+          :src="slide"
+        >
       </SwiperSlide>
     </Swiper>
     <button
       id="nextPhotoSlide"
-      type="button"
       class="photo-slider__btn photo-slider__btn_next"
+      type="button"
     >
-      <img :src="sliderArrowBtn" alt="sliderPrevBtn">
+      <img alt="sliderPrevBtn" :src="sliderArrowBtn">
     </button>
   </div>
 </template>

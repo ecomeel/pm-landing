@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import PhotoSlider from '../PhotoSlider.vue';
+import PhotoSlider from '../PhotoSlider.vue'
 import reviewImg1 from "@/assets/images/reviews/review-1.png"
 import reviewImg2 from "@/assets/images/reviews/review-2.png"
 import reviewImg3 from "@/assets/images/reviews/review-3.png"
 import reviewImg4 from "@/assets/images/reviews/review-4.png"
 
-defineOptions({ name: "ReviewsSection" });
+defineOptions({ name: "ReviewsSection" })
 
 const reviewsList = [
   reviewImg1, reviewImg2, reviewImg3, reviewImg4
@@ -24,7 +24,7 @@ const reviewsList = [
 
 <style lang="scss" scoped>
 .review {
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 
   h2 {
     @include h2;
@@ -32,9 +32,15 @@ const reviewsList = [
   }
 
   @media (max-width: 767px) {
+    padding-bottom: 60px;
+
     h2 {
       margin-bottom: 30px;
     }
+  }
+
+  @media (max-width: 549px) {
+    padding-bottom: 35px;
   }
 }
 </style>

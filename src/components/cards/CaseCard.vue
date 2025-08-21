@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { ICase } from '@/types';
-import type { PropType } from 'vue';
-import UiSquareList from '@/ui/UiSquareList.vue';
+import type { ICase } from '@/types'
+import type { PropType } from 'vue'
+import UiSquareList from '@/ui/UiSquareList.vue'
 
-defineOptions({ name: "CaseCard" });
+defineOptions({ name: "CaseCard" })
 
 defineProps({
   workCase: {
@@ -22,7 +22,9 @@ defineProps({
   <div class="card" :class="{ card_left: caseNumber % 2 === 0 }">
     <div class="card__content-wrapper">
       <div class="card__text-content">
-        <h3 class="card__title">{{ `КЕЙС №${caseNumber}` }}</h3>
+        <h3 class="card__title">
+          {{ `КЕЙС №${caseNumber}` }}
+        </h3>
         <p class="card__subtitle" v-html="workCase.subtitle" />
         <div class="card__results-header">
           <p>Результаты, которых нам удалось достичь</p>
@@ -30,8 +32,8 @@ defineProps({
         </div>
         <UiSquareList class="card__results-list" :list="workCase.results" />
       </div>
-      <div class="card__image" >
-        <img :src="workCase.pictureSource" :alt="`Кейс ${caseNumber}`" />
+      <div class="card__image">
+        <img :alt="`Кейс ${caseNumber}`" :src="workCase.pictureSource">
       </div>
     </div>
     <div class="card__underline" />
@@ -112,7 +114,7 @@ defineProps({
       height: 10px;
     }
   }
-  
+
   @media (max-width: 767px) {
     &__content-wrapper {
       gap: 30px;

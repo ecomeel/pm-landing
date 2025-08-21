@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import UiArrowList from '@/ui/UiArrowList.vue';
+import UiArrowList from '@/ui/UiArrowList.vue'
 
-defineOptions({ name: "RequestSection" });
+defineOptions({ name: "RequestSection" })
 
 const requests = [
   "<span>Как найти</span> первый проект или выйти на более крупных клиентов?",
@@ -19,9 +19,11 @@ const requests = [
 
 <template>
   <section class="request">
-    <h2 class="request__title">Чаще всего <span>ко мне обращаются</span> с&nbsp;такими запросами:</h2>
+    <h2 class="request__title">
+      Чаще всего <span>ко мне обращаются</span> с&nbsp;такими запросами:
+    </h2>
 
-    <UiArrowList :list="requests" class="request__list" />
+    <UiArrowList class="request__list" :list="requests" />
   </section>
 </template>
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineOptions({ name: "UiNumberedList" });
+defineOptions({ name: "UiNumberedList" })
 
 defineProps<{
   list: Record<"title" | "description", string>[]
@@ -8,11 +8,21 @@ defineProps<{
 
 <template>
   <ul class="list">
-    <li class="list__item item" v-for="(item, index) in list" :key="index">
-      <p class="item__number">{{ `0${index + 1}` }}</p>
+    <li
+      v-for="(item, index) in list"
+      :key="index"
+      class="list__item item"
+    >
+      <p class="item__number">
+        {{ `0${index + 1}` }}
+      </p>
       <div class="item__text-wrapper">
-        <h3 class="item__title">{{ item.title }}</h3>
-        <p class="item__description">{{ item.description }}</p>
+        <h3 class="item__title">
+          {{ item.title }}
+        </h3>
+        <p class="item__description">
+          {{ item.description }}
+        </p>
       </div>
     </li>
   </ul>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { IInfoCard } from '@/types';
-import InfoBlock from '../InfoBlock.vue';
+import type { IInfoCard } from '@/types'
+import InfoBlock from '../InfoBlock.vue'
 
-defineOptions({ name: "AdditionalAdvantagesSection" });
+defineOptions({ name: "AdditionalAdvantagesSection" })
 
 const additionalAdvantages: IInfoCard[] = [
   {
@@ -24,9 +24,15 @@ const additionalAdvantages: IInfoCard[] = [
 
 <template>
   <section class="additional">
-    <h2 class="additional__title">Что вы получите <span>дополнительно</span> после консультации?</h2>
-    <p class="additional__subtitle">Каждая консультация — это не просто&nbsp;разговор, а конкретная опора под&nbsp;твой&nbsp;следующий шаг</p>
-    <p class="additional__subtitle">Поэтому после неё ты получаешь материалы под свой запрос, которые помогут двигаться дальше — уже с&nbsp;инструментами в&nbsp;руках</p>
+    <h2 class="additional__title">
+      Что вы получите <span>дополнительно</span> после консультации?
+    </h2>
+    <p class="additional__subtitle">
+      Каждая консультация — это не просто&nbsp;разговор, а конкретная опора под&nbsp;твой&nbsp;следующий шаг
+    </p>
+    <p class="additional__subtitle">
+      Поэтому после неё ты получаешь материалы под свой запрос, которые помогут двигаться дальше — уже с&nbsp;инструментами в&nbsp;руках
+    </p>
     <InfoBlock :cards="additionalAdvantages" class="additional__info-block" />
   </section>
 </template>
@@ -60,7 +66,7 @@ const additionalAdvantages: IInfoCard[] = [
 
   @media (max-width: 767px) {
     padding-bottom: 150px;
-    
+
     &__title {
       margin-bottom: 16px;
     }

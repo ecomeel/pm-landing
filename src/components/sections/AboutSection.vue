@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import UiArrowList from '@/ui/UiArrowList.vue';
+import UiArrowList from '@/ui/UiArrowList.vue'
+import { animate, onScroll } from 'animejs'
+import { onMounted } from 'vue'
 
-defineOptions({ name: "AboutSection" });
+defineOptions({ name: "AboutSection" })
 
 const facts = [
   "<span>5 лет управляю проектами</span> в сфере онлайн-образования и инфобизнеса;",
@@ -11,30 +13,63 @@ const facts = [
   "Управляла командой <span>40+ человек</span>;",
   "Повышаю квалификацию у <span>Анны Самокатовой</span>.",
 ]
+
+onMounted(() => {
+  console.log(document.getElementById("about"))
+
+  animate("#arrowList", {
+    x: "200px",
+    delay: 1000,
+    autoplay: onScroll({
+      container: ".page",
+      target: "#arrowList",
+    })
+  })
+})
 </script>
 
 <template>
-  <section id="about" class="about">
+  <section
+    id="about"
+    class="about"
+  >
     <div class="about__img-wrapper">
       <picture>
-        <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-2.webp" type="image/webp">
-        <source srcset="@/assets/images/background/preview-2_mobile.webp" type="image/webp">
-        <source media="(min-width: 768px)" srcset="@/assets/images/background/preview-2.png" type="image/png">
-        <img class="about__img" src="@/assets/images/background/preview-2_mobile.png" alt="preview">
+        <source
+          media="(min-width: 768px)"
+          srcset="@/assets/images/background/preview-2.webp"
+          type="image/webp"
+        >
+        <source
+          srcset="@/assets/images/background/preview-2_mobile.webp"
+          type="image/webp"
+        >
+        <source
+          media="(min-width: 768px)"
+          srcset="@/assets/images/background/preview-2.png"
+          type="image/png"
+        >
+        <img
+          alt="preview"
+          class="about__img"
+          src="@/assets/images/background/preview-2_mobile.png"
+        >
       </picture>
 
       <div class="about__img-border" />
     </div>
 
     <div class="about__text-content">
-      <h2 class="about__title">Пару слов о <span>себе</span></h2>
+      <h2 class="about__title">
+        Пару слов о <span>себе</span>
+      </h2>
 
       <UiArrowList :list="facts" />
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .about {
   padding-top: 120px;
   display: flex;
@@ -112,7 +147,7 @@ const facts = [
 
     &__img-wrapper {
       display: none;
-      
+
       &::after {
         left: 10px;
         top: -15px;

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue';
+import type { PropType } from 'vue'
 
-defineOptions({ name: "UiSquareList" });
+defineOptions({ name: "UiSquareList" })
 
 defineProps({
   list: {
@@ -13,7 +13,12 @@ defineProps({
 
 <template>
   <ul class="list">
-    <li class="list__item" v-for="item in list" :key="item.slice(0, 4)" v-html="item" />
+    <li
+      v-for="item in list"
+      :key="item.slice(0, 4)"
+      class="list__item"
+      v-html="item"
+    />
   </ul>
 </template>
 
