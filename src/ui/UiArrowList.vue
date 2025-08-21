@@ -12,12 +12,12 @@ defineProps({
 </script>
 
 <template>
-  <!-- <ul id="arrowList" class="list relative -left-[100vw]"> -->
-  <ul id="arrowList" class="list">
+  <ul class="list">
     <li
+      id="arrowListItem"
       v-for="(item, index) in list"
       :key="index"
-      class="list__item"
+      class="list__item -left-[100vw]"
       v-html="item"
     />
   </ul>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import UiArrowList from '@/ui/UiArrowList.vue'
-import { animate, onScroll } from 'animejs'
+import { animate, onScroll, stagger } from 'animejs'
 import { onMounted } from 'vue'
 
 defineOptions({ name: "AboutSection" })
@@ -15,14 +15,13 @@ const facts = [
 ]
 
 onMounted(() => {
-  console.log(document.getElementById("about"))
-
-  animate("#arrowList", {
-    x: "200px",
-    delay: 1000,
+  animate(".about__text-content #arrowListItem", {
+    x: "100vw",
+    delay: stagger(150),
+    duration: 800,
     autoplay: onScroll({
       container: ".page",
-      target: "#arrowList",
+      target: ".about__text-content",
     })
   })
 })
@@ -82,6 +81,7 @@ onMounted(() => {
 
   &__img-wrapper {
     position: relative;
+    z-index: 20;
 
     &:after {
       content: "";
