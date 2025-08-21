@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import UiArrowList from '@/ui/UiArrowList.vue'
+import { animate, onScroll, stagger } from 'animejs'
+import { onMounted } from 'vue'
 
 defineOptions({ name: "RequestSection" })
 
@@ -15,6 +17,17 @@ const requests = [
   "<span>Как наладить</span> процессы и выйти из режима «тушения пожаров»?",
 ]
 
+onMounted(() => {
+  animate(".request__list #arrowListItem", {
+    x: ["-100vw", 0],
+    delay: stagger(150),
+    duration: 800,
+    autoplay: onScroll({
+      container: ".page",
+      target: ".request__list",
+    })
+  })
+})
 </script>
 
 <template>

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { IInfoCard } from '@/types'
 import InfoBlock from '../InfoBlock.vue'
+import { onMounted } from 'vue'
+import { animate, stagger, onScroll } from 'animejs'
 
 defineOptions({ name: "AdditionalAdvantagesSection" })
 
@@ -20,6 +22,18 @@ const additionalAdvantages: IInfoCard[] = [
     ]
   },
 ]
+
+onMounted(() => {
+  animate(".additional__info-block #squareListItem", {
+    opacity: [0, 1],
+    delay: stagger(150),
+    duration: 800,
+    autoplay: onScroll({
+      container: ".page",
+      target: ".additional__info-block",
+    })
+  })
+})
 </script>
 
 <template>

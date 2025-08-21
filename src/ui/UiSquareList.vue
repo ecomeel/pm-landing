@@ -14,6 +14,7 @@ defineProps({
 <template>
   <ul class="list">
     <li
+      id="squareListItem"
       v-for="item in list"
       :key="item.slice(0, 4)"
       class="list__item"

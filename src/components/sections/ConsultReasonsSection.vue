@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { IInfoCard } from '@/types'
 import InfoBlock from '../InfoBlock.vue'
+import { onMounted } from 'vue'
+import { animate, stagger, onScroll } from 'animejs'
 
 defineOptions({ name: "ConsultReasonsSection" })
 
@@ -24,6 +26,18 @@ const reasons: IInfoCard[] = [
     ]
   },
 ]
+
+onMounted(() => {
+  animate(".consult #squareListItem", {
+    opacity: [0, 1],
+    delay: stagger(150),
+    duration: 800,
+    autoplay: onScroll({
+      container: ".page",
+      target: ".consult__reasons",
+    })
+  })
+})
 </script>
 
 <template>

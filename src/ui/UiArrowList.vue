@@ -17,7 +17,7 @@ defineProps({
       id="arrowListItem"
       v-for="(item, index) in list"
       :key="index"
-      class="list__item -left-[100vw]"
+      class="list__item"
       v-html="item"
     />
   </ul>

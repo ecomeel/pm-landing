@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue'
+import { type PropType } from 'vue'
 import InfoCard from './cards/InfoCard.vue'
 import type { IInfoCard } from '@/types'
 import UiCircleText from '@/ui/UiCircleText.vue'
@@ -15,7 +15,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="info">
+  <div id="info" class="info">
     <InfoCard
       v-for="(card, index) in cards"
       :key="index"

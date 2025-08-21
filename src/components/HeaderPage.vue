@@ -38,13 +38,14 @@ const links = [
 
 onMounted(() => {
   animate("#navigation", {
-    y: "100vw"
+    x: ["-100vw", 0],
   })
 })
 </script>
 
 <template>
   <header
+    id="headerPage"
     class="fixed z-10 top-[27px] right-[16px]
     s:right-[24px]
     md:right-[initial] md:left-[2.5vw] md:top-[40px]
@@ -54,7 +55,7 @@ onMounted(() => {
     <nav
       v-if="!isMobileSize"
       id="navigation"
-      class="p-2 bg-white/50 rounded-full backdrop-blur-xs shadow-lg lg:px-4 lg:py-2 -top-[100vw] relative"
+      class="p-2 bg-white/50 rounded-full backdrop-blur-xs shadow-lg lg:px-4 lg:py-2 relative"
     >
       <ul class="navigation__list flex gap-[10px] lg:gap-4 xl:gap-[3.5vw]">
         <li

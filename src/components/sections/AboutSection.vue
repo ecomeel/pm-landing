@@ -16,7 +16,7 @@ const facts = [
 
 onMounted(() => {
   animate(".about__text-content #arrowListItem", {
-    x: "100vw",
+    x: ["100vw", 0],
     delay: stagger(150),
     duration: 800,
     autoplay: onScroll({
@@ -81,7 +81,6 @@ onMounted(() => {
 
   &__img-wrapper {
     position: relative;
-    z-index: 20;
 
     &:after {
       content: "";

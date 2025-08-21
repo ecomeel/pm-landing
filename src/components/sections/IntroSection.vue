@@ -7,30 +7,33 @@ defineOptions({ name: "IntroSection" })
 
 onMounted(() => {
   animate(".intro__header", {
-    delay: 100,
-    x: "100vw",
+    x: ["-100vw", 0 ],
+    opacity: [0, 1],
   })
 
   animate(".intro__subtitle", {
-    delay: 200,
-    x: "100vw",
+    delay: 100,
+    x: ["-100vw", 0 ],
+    opacity: [0, 1],
   })
 
   animate(".intro__description", {
-    delay: 300,
-    x: "100vw"
+    delay: 200,
+    x: ["-100vw", 0 ],
+    opacity: [0, 1],
   })
 
   animate(".intro__consult", {
-    delay: 400,
-    x: "100vw",
+    delay: 300,
+    x: ["-100vw", 0 ],
+    opacity: [0, 1],
   })
 })
 </script>
 
 <template>
   <section id="intro" class="intro">
-    <header class="intro__header header overflow-clip inline-block -left-[100vw]">
+    <header class="intro__header header overflow-clip inline-block">
       <h1 class="header__title main-medium inline-block">
         Гущина Анастасия
       </h1>
@@ -41,16 +44,16 @@ onMounted(() => {
       >
     </header>
 
-    <h2 class="intro__subtitle -left-[100vw]">
+    <h2 class="intro__subtitle">
       Проджект-менеджер
       <span>крупных онлайн-проектов</span>
     </h2>
 
-    <p class="intro__description -left-[100vw]">
+    <p class="intro__description">
       Провожу <b>консультации</b> для&nbsp;тех, кто&nbsp;начинает свой путь в&nbsp;онлайне и&nbsp;для&nbsp;опытных проджект&#8209;менеджеров, которые хотят уверенно расти в&nbsp;онлайн-среде: <b>системно, спокойно и&nbsp;без&nbsp;выгорания</b>
     </p>
 
-    <div class="intro__consult -left-[100vw]">
+    <div class="intro__consult">
       <img
         alt="arrow icon"
         class="intro__long-arrow"
