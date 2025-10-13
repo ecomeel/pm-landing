@@ -34,24 +34,28 @@ onMounted(() => {
   >
     <div class="about__img-wrapper">
       <picture>
-        <source
+        <!--
+          <source
           media="(min-width: 768px)"
           srcset="@/assets/images/background/preview-2.webp"
           type="image/webp"
-        >
-        <source
+          >
+          <source
           srcset="@/assets/images/background/preview-2_mobile.webp"
           type="image/webp"
-        >
-        <source
+          >
+        -->
+        <!--
+          <source
           media="(min-width: 768px)"
           srcset="@/assets/images/background/preview-2.png"
           type="image/png"
-        >
+          >
+        -->
         <img
           alt="preview"
           class="about__img"
-          src="@/assets/images/background/preview-2_mobile.png"
+          src="@/assets/images/background/preview-2_mobile.jpg"
         >
       </picture>
 
@@ -81,6 +85,7 @@ onMounted(() => {
 
   &__img-wrapper {
     position: relative;
+    flex: 0 0 auto;
 
     &:after {
       content: "";
@@ -130,31 +135,42 @@ onMounted(() => {
     &__title {
       margin-bottom: 20px;
     }
+
   }
 
   @media (max-width: 767px) {
+    padding-top: 60px;
     align-items: flex-start;
+    gap: 30px;
 
     &__img {
-      width: 200px;
+      width: 150px;
+
+      &-wrapper {
+        &:after {
+          border-width: 1px;
+          left: 15px;
+          top: -15px;
+        }
+      }
     }
   }
 
   @media (max-width: 549px) {
-    gap: 30px;
-    padding-top: 50px;
-
-    &__img-wrapper {
-      display: none;
-
-      &::after {
-        left: 10px;
-        top: -15px;
-      }
-    }
+    flex-direction: column-reverse;
+    padding-top: 30px;
 
     &__img {
-      width: 120px;
+      width: 98%;
+
+      &-wrapper {
+        width: 95%;
+
+        &::after {
+          left: 8px;
+          top: -12px;
+        }
+      }
     }
   }
 }

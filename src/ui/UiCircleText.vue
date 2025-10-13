@@ -49,11 +49,13 @@ defineOptions({ name: "UiCircleText" })
   &__text {
     font-family: "Inter";
     font-weight: 700;
-    font-size: 18px;
+    font-size: 14px;
+    letter-spacing: .03em;
     display: flex;
     flex-direction: column;
     gap: 6px;
     justify-content: center;
+    text-transform: uppercase;
 
     span {
       display: block;
@@ -62,10 +64,18 @@ defineOptions({ name: "UiCircleText" })
   }
 
   @media (max-width: 767px) {
-    width: 140px;
+    width: 150px;
 
     &__text {
-      font-size: 12px;
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 549px) {
+    width: 35vw;
+
+    &__text {
+      font-size: 2.57vw;
     }
   }
 }

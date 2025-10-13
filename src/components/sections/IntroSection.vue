@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import UiCircleText from '@/ui/UiCircleText.vue'
+import UiDarkSocial from '@/ui/UiDarkSocial.vue'
+import { SOCIALS } from '@/constants'
+
 import { animate } from 'animejs'
 import { onMounted } from 'vue'
 
@@ -50,7 +53,7 @@ onMounted(() => {
     </h2>
 
     <p class="intro__description">
-      Провожу <b>консультации</b> для&nbsp;тех, кто&nbsp;начинает свой путь в&nbsp;онлайне и&nbsp;для&nbsp;опытных проджект&#8209;менеджеров, которые хотят уверенно расти в&nbsp;онлайн-среде: <b>системно, спокойно и&nbsp;без&nbsp;выгорания</b>
+      Провожу <b>консультации</b> для&nbsp;тех, кто&nbsp;начинает свой путь в&nbsp;онлайне и&nbsp;для&nbsp;опытных проджект-менеджеров, которые хотят уверенно расти в&nbsp;онлайн-среде: <b>системно, спокойно и&nbsp;без&nbsp;выгорания</b>
     </p>
 
     <div class="intro__consult">
@@ -61,15 +64,27 @@ onMounted(() => {
       >
 
       <UiCircleText />
+
+      <div class="intro__socials">
+        <UiDarkSocial
+          v-for="(social, index) in SOCIALS"
+          :key="index"
+          :icon="social.icon"
+          :link="social.link"
+          :name="social.id"
+        />
+      </div>
     </div>
 
     <picture>
-      <source
+      <!--
+        <source
         media="(min-width: 768px)"
         srcset="@/assets/images/background/preview-1.webp"
         type="image/webp"
-      >
-      <source srcset="@/assets/images/background/preview-1_mobile.webp" type="image/webp">
+        >
+      -->
+      <!-- <source srcset="@/assets/images/background/preview-1_mobile.webp" type="image/webp"> -->
       <source
         media="(min-width: 768px)"
         srcset="@/assets/images/background/preview-1.jpg"
@@ -162,11 +177,18 @@ onMounted(() => {
     column-gap: 20px;
   }
 
+  &__socials {
+    display: none;
+  }
+
   @media (max-width: 767px) {
+    height: auto;
+    padding-bottom: 26vw;
+
     .header {
       gap: 8px;
       padding-top: 50px;
-      margin-left: 16px;
+      margin-left: 0;
 
       &__title {
         text-decoration-thickness: 1px;
@@ -174,34 +196,29 @@ onMounted(() => {
       }
 
       &__arrow {
-        width: 16px;
-        height: 17px;
+        width: 3.1vw;
+        height: 3.15vw;
       }
-    }
-
-    &__bg {
-      object-position: 70% top;
     }
 
     &__subtitle {
       width: max-content;
-      font-size: 42px;
-      margin-top: 3.5vh;
-      padding: 8px 12px 16px 14px;
-      @include text-mobile-background(26px);
+      font-size: 10.48vw;
+      margin-top: 2.7vh;
+      margin-left: -1px;
 
       span {
-        margin-top: 5px;
-        font-size: 30px;
+        margin-top: 2px;
+        margin-left: 1px;
+        font-size: 7.08vw;
       }
     }
 
     &__description {
-      margin-top: 20px;
-      font-size: 16px;
-      max-width: 260px;
-      padding: 12px 12px 12px 14px;
-      @include text-mobile-background(26px);
+      margin-top: 28px;
+      font-size: 3.68vw;
+      line-height: 1.25em;
+      max-width: 80vw;
     }
 
     &__long-arrow {
@@ -210,63 +227,31 @@ onMounted(() => {
 
     &__consult {
       margin-top: 6vh;
+      flex-direction: column;
+      width: max-content;
     }
-  }
 
-  @media (max-width: 630px) {
-    &__bg {
-      object-position: 75% bottom;
+    &__socials {
+      margin-top: 7vh;
+      display: flex;
+      flex-direction: column;
+      gap: 16px
     }
   }
 
   @media (max-width: 549px) {
-    .header {
-      padding-top: 37px;
-
-      &__title {
-        font-size: 24px;
-      }
-    }
-
-    &__bg {
-      object-position: 60%;
-    }
-
-    &__subtitle {
-      font-size: 32px;
-
-      span {
-        margin-top: 3px;
-        font-size: 23px;
-      }
-    }
-
     &__description {
-      padding-right: 10px;
-      font-size: 12px;
-      max-width: 220px;
-    }
-  }
+      margin-top: 16px;
+      font-size: 4.375vw;
 
-  @media (max-width: 440px) {
-    .header {
-      margin-left: 14px;
-    }
-
-    &__bg {
-      object-position: 67%;
-    }
-
-    &__subtitle, &__description, &__consult {
-      margin-top: 6vh;
-    }
-
-    &__subtitle {
-      font-size: 26px;
-
-      span {
-        font-size: 20px;
+      b:last-child {
+        display: block;
       }
+    }
+
+    &__socials {
+      margin-top: 5vh;
+      gap: 8px
     }
   }
 }

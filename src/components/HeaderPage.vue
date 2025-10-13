@@ -46,7 +46,7 @@ onMounted(() => {
 <template>
   <header
     id="headerPage"
-    class="fixed z-10 top-[27px] right-[16px]
+    class="fixed z-10 top-[38px] right-[16px]
     s:right-[24px]
     md:right-[initial] md:left-[2.5vw] md:top-[40px]
     lg:left-[3.6vw]
