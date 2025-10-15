@@ -61,14 +61,27 @@ defineProps({
   }
 
   @media (max-width: 767px) {
+    gap: 20px;
+
+    &__item {
+      padding-left: 24px;
+
+      &::before {
+        top: 3px;
+        width: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 549px) {
     gap: 12px;
 
     &__item {
-      padding-left: 16px;
+      padding-left: 5vw;
 
       &::before {
-        top: 1px;
-        width: 8px;
+        top: .7vw;
+        width: 2.5vw;
       }
     }
   }

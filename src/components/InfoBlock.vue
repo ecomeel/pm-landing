@@ -3,6 +3,7 @@ import { type PropType } from 'vue'
 import InfoCard from './cards/InfoCard.vue'
 import type { IInfoCard } from '@/types'
 import UiCircleText from '@/ui/UiCircleText.vue'
+import { useProject } from '@/composables'
 
 defineOptions({ name: "InfoBlock" })
 
@@ -12,6 +13,8 @@ defineProps({
     default: () => [],
   }
 })
+
+const { isMobileView } = useProject()
 </script>
 
 <template>
@@ -23,7 +26,7 @@ defineProps({
       :cut-corner-position="index ? 'left' : 'right'"
     />
     <div class="info__circle">
-      <UiCircleText class="info__circle--inner" />
+      <UiCircleText class="info__circle--inner" :show-arrow="isMobileView" />
     </div>
   </div>
 </template>
@@ -35,26 +38,6 @@ defineProps({
   gap: 1.95vw;
   position: relative;
 
-  &__circle {
-    position: absolute;
-    // bottom: -35%;
-    bottom: 0;
-    left: 50%;
-    // translate: -50%;
-    translate: -50% 65%;
-    background-color: #F5F5F5;
-    border-radius: 100%;
-    padding: 20px;
-
-    &--inner {
-      width: 170px;
-
-      :deep(p > span) {
-        font-size: 16px;
-      }
-    }
-  }
-
   @media (max-width: 1439px) {
     gap: 20px;
 
@@ -63,50 +46,38 @@ defineProps({
     }
   }
 
-  @media (max-width: 1023px) {
-    &__circle {
-
-      &--inner {
-        width: 150px;
-
-        :deep(p > span) {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
   @media (max-width: 767px) {
     gap: 12px;
+    grid-template-columns: 1fr;
+  }
 
+  @media (min-width: 768px) {
     &__circle {
-      padding: 4px;
-      translate: -50% 70%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 65%;
+      background-color: #F5F5F5;
+      border-radius: 100%;
+      padding: 20px;
 
-      &--inner {
-        width: 130px;
+      ::v-deep(.circle-text) {
+        width: 170px;
 
-        :deep(p > span) {
+        span {
           font-size: 12px;
         }
       }
     }
   }
 
-  @media (max-width: 549px) {
-    grid-template-columns: 1fr;
+  @media (min-width: 1280px) {
+    ::v-deep(.circle-text) {
+      width: 200px;
 
-
-    > *:not(:last-child) {
-      width: 80vw;
-
-      &:not(:first-child) {
-        justify-self: end;
+      span {
+        font-size: 14px;
       }
-    }
-
-    &__circle {
-      display: none;
     }
   }
 }

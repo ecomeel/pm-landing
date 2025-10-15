@@ -2,23 +2,41 @@
 import { LINK } from '@/constants'
 
 defineOptions({ name: "UiCircleText" })
+
+interface Props {
+  showArrow?: boolean;
+}
+
+withDefaults(defineProps<Props>(), {
+  showArrow: true
+})
 </script>
 
 <template>
-  <div class="circle-text">
-    <img
-      alt="text"
-      class="circle-text__circle"
-      src="@/assets/images/circle-text.svg"
-    >
-    <a
-      class="circle-text__text"
-      :href="LINK.telegram"
-      target="_blank"
-    >
-      <span>Хочу</span>
-      <span>констультацию</span>
-    </a>
+  <div class="circle-text__outer" :class="{'circle-text__with-arrow': showArrow}">
+    <div v-if="showArrow" class="circle-text__arrow-wrapper">
+      <img
+        alt="arrow"
+        class="circle-text__arrow"
+        src="@/assets/images/icons/long-arrow.svg"
+      >
+    </div>
+
+    <div class="circle-text">
+      <img
+        alt="text"
+        class="circle-text__circle"
+        src="@/assets/images/circle-text.svg"
+      >
+      <a
+        class="circle-text__text"
+        :href="LINK.telegram"
+        target="_blank"
+      >
+        <span>Хочу</span>
+        <span>констультацию</span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -35,6 +53,25 @@ defineOptions({ name: "UiCircleText" })
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
+
+  &__outer {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__arrow {
+    // width: 200px;
+    // height: auto;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
 
   &__circle {
     position: absolute;
@@ -65,6 +102,10 @@ defineOptions({ name: "UiCircleText" })
 
   @media (max-width: 767px) {
     width: 150px;
+
+    &__with-arrow {
+      width: 73%;
+    }
 
     &__text {
       font-size: 11px;

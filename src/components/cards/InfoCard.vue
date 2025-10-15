@@ -81,6 +81,10 @@ defineProps({
   @media (max-width: 1439px) {
     &__header {
       padding: 16px 20px;
+
+      h3 {
+        font-size: 18px;
+      }
     }
 
     &__body {
@@ -90,17 +94,30 @@ defineProps({
 
   @media (max-width: 767px) {
     &__header {
-      padding: 12px;
+      padding: 18px 28px;
+
+      h3 {
+        letter-spacing: -0.01em;
+        font-size: 20px;
+      }
     }
 
     &__body {
-      padding: 12px 12px 30px;
+      padding: 24px 28px;
     }
   }
 
   @media (max-width: 549px) {
+    &__header {
+      padding: 9px 14px;
+
+      h3 {
+        font-size: 3.75vw;
+      }
+    }
+
     &__body {
-      padding-bottom: 16px;
+      padding: 16px;
     }
   }
 }

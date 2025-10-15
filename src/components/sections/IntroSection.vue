@@ -5,8 +5,11 @@ import { SOCIALS } from '@/constants'
 
 import { animate } from 'animejs'
 import { onMounted } from 'vue'
+import { useProject } from '@/composables'
 
 defineOptions({ name: "IntroSection" })
+
+const { isMobileView } = useProject()
 
 onMounted(() => {
   animate(".intro__header", {
@@ -57,13 +60,7 @@ onMounted(() => {
     </p>
 
     <div class="intro__consult">
-      <img
-        alt="arrow icon"
-        class="intro__long-arrow"
-        src="@/assets/images/icons/long-arrow.svg"
-      >
-
-      <UiCircleText />
+      <UiCircleText :show-arrow="!isMobileView" />
 
       <div class="intro__socials">
         <UiDarkSocial
@@ -135,11 +132,6 @@ onMounted(() => {
 
       @include main-medium;
     }
-
-    &__arrow {
-      width: 19px;
-      height: 20px;
-    }
   }
 
   &__subtitle {
@@ -193,11 +185,6 @@ onMounted(() => {
       &__title {
         text-decoration-thickness: 1px;
         text-underline-offset: 2px;
-      }
-
-      &__arrow {
-        width: 3.1vw;
-        height: 3.15vw;
       }
     }
 
