@@ -40,8 +40,8 @@
     font-size: 40px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 30px;
+  @media (max-width: 549px) {
+    font-size: 8.75vw;
   }
 }
 
@@ -66,7 +66,7 @@
   }
 
   @media (max-width: 549px) {
-    font-size: 16px;
+    font-size: 4.375vw;
   }
 }
 
@@ -165,7 +165,7 @@
     font-size: 16px;
   }
 
-  @media (max-width: 767px) {
-    font-size: 12px;
+  @media (max-width: 549px) {
+    font-size: 3.75vw;
   }
 }

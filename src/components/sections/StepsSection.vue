@@ -39,9 +39,6 @@ const stepsList = [
       <p class="invite__price">
         Стоимость консультации - 5000₽
       </p>
-      <div class="invite__arrow">
-        <img alt="arrow icon" src="@/assets/images/icons/long-arrow.svg">
-      </div>
       <UiCircleText class="invite__circle" />
     </div>
   </section>
@@ -80,6 +77,10 @@ const stepsList = [
       border: 1px solid $black-color;
       @include body-2-bold;
     }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   @media (max-width: 1279px) {
@@ -93,79 +94,25 @@ const stepsList = [
       margin: 20px 0 50px;
     }
 
-    .invite__circle {
-      width: 150px;
-
-      :deep(p) {
-        font-size: 14px;
-      }
+    .invite__price {
+      font-size: 14px;
     }
   }
 
   @media (max-width: 767px) {
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding: {
+      top: 40px;
+      bottom: 40px;
+    };
 
     &__subtitle {
-      margin: 12px 0 40px;
-    }
-
-    .invite {
-      margin-top: 25px;
-      gap: 8px;
-
-      &__price {
-        padding: 8px 12px;
-      }
-
-      &__circle {
-        width: 130px;
-
-        :deep(p) {
-          font-size: 12px;
-        }
-      }
+      margin: 8px 0 40px;
     }
   }
 
   @media (max-width: 549px) {
-    padding-top: 70px;
-
     &__subtitle {
-      margin-bottom: 26px;
-    }
-
-    .invite {
-      gap: 40px;
-
-      &__arrow {
-        display: none;
-      }
-
-      &__circle {
-        width: 100px;
-
-        :deep(p) {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 400px) {
-    .invite {
-      gap: 8px;
-
-      &__circle {
-
-        :deep(p) {
-          font-size: 9px;
-        }
-      }
-
-      &__price {
-        font-size: 10px;
-      }
+      margin-bottom: calc(22px + 1.5vw);
     }
   }
 }

@@ -49,6 +49,10 @@ const { isMobileView } = useProject()
   @media (max-width: 767px) {
     gap: 12px;
     grid-template-columns: 1fr;
+
+    &__circle {
+      padding: 0;
+    }
   }
 
   @media (min-width: 768px) {

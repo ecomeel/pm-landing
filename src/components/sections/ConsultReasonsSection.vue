@@ -67,6 +67,7 @@ onMounted(() => {
 
   @media (max-width: 767px) {
     padding-top: 30px;
+    padding-bottom: 0;
 
     &__title {
       margin-bottom: 20px;

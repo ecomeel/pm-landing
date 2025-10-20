@@ -50,9 +50,9 @@ defineProps<{
     }
 
     &__title {
-    text-transform: uppercase;
-    @include body-2-bold;
-    font-weight: 700;
+      text-transform: uppercase;
+      @include body-2-bold;
+      font-weight: 700;
     }
 
     &__description {
@@ -65,10 +65,16 @@ defineProps<{
     gap: 20px 30px;
 
     .item {
-      gap: 25px;
+      gap: 16px;
+
+      &:nth-child(2n + 1) {
+        .item__text-wrapper {
+          border-bottom: 1px solid $beige-color;
+        }
+      }
 
       &__number {
-        margin-top: -30px;
+        margin-top: -27px;
         font-size: 70px;
       }
     }
@@ -77,10 +83,26 @@ defineProps<{
   @media (max-width: 549px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
-    gap: 20px;
+    gap: 2.7vw;
 
     .item {
-      gap: 16px;
+      gap: 12px;
+
+      &__number {
+        margin-top: -5vw;
+        font-size: 14vw;
+      }
+
+      &__description {
+        margin-top: 4px;
+      }
+
+      &:not(:last-child) {
+        .item__text-wrapper {
+          padding-bottom: 2.7vw;
+          border-bottom: 1px solid $beige-color;
+        }
+      }
     }
   }
 }
