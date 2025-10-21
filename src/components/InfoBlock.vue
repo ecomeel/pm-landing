@@ -38,6 +38,10 @@ const { isMobileView } = useProject()
   gap: 1.95vw;
   position: relative;
 
+  &__circle {
+    padding: 16px;
+  }
+
   @media (max-width: 1439px) {
     gap: 20px;
 
@@ -63,7 +67,6 @@ const { isMobileView } = useProject()
       translate: -50% 65%;
       background-color: #F5F5F5;
       border-radius: 100%;
-      padding: 20px;
 
       ::v-deep(.circle-text) {
         width: 170px;

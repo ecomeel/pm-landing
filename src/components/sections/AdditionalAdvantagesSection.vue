@@ -8,7 +8,7 @@ defineOptions({ name: "AdditionalAdvantagesSection" })
 
 const additionalAdvantages: IInfoCard[] = [
   {
-    title: "Если ты только начинаешь свой путь в онлайне",
+    title: "Если ты только начинаешь путь в онлайне",
     list: [
       "Шаблон резюме",
       "Чек-лист <span>«Как выйти на первые проекты»</span>: что знать, где искать, как подать себя и тд",
@@ -79,7 +79,7 @@ onMounted(() => {
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 150px;
+    padding-bottom: 70px;
 
     &__title {
       margin-bottom: 16px;
@@ -95,11 +95,7 @@ onMounted(() => {
   }
 
   @media (max-width: 550px) {
-    padding-bottom: 70px;
-
-    &__title {
-      max-width: 400px;
-    }
+    padding-bottom: 40px;
 
     &__subtitle {
       max-width: 340px;
