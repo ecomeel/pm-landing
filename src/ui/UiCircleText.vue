@@ -42,7 +42,7 @@ const circleSrc = computed(() => props.color === "black" ? circleDark : circleLi
         target="_blank"
       >
         <span>Хочу</span>
-        <span>констультацию</span>
+        <span>консультацию</span>
       </a>
     </div>
   </div>
