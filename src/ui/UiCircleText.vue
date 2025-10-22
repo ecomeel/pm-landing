@@ -1,15 +1,22 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { LINK } from '@/constants'
+import circleDark from "@/assets/images/circle-text.svg"
+import circleLight from "@/assets/images/circle-text-white.svg"
 
 defineOptions({ name: "UiCircleText" })
 
 interface Props {
   showArrow?: boolean;
+  color?: "black" | "white";
 }
 
-withDefaults(defineProps<Props>(), {
-  showArrow: true
+const props = withDefaults(defineProps<Props>(), {
+  showArrow: true,
+  color: "black",
 })
+
+const circleSrc = computed(() => props.color === "black" ? circleDark : circleLight)
 </script>
 
 <template>
@@ -26,10 +33,11 @@ withDefaults(defineProps<Props>(), {
       <img
         alt="text"
         class="circle-text__circle"
-        src="@/assets/images/circle-text.svg"
+        :src="circleSrc"
       >
       <a
         class="circle-text__text"
+        :class="{ 'circle-text__text_white': props.color === 'white' }"
         :href="LINK.telegram"
         target="_blank"
       >
@@ -61,9 +69,6 @@ withDefaults(defineProps<Props>(), {
   }
 
   &__arrow {
-    // width: 200px;
-    // height: auto;
-
     &-wrapper {
       display: flex;
       flex-direction: column;
@@ -94,9 +99,29 @@ withDefaults(defineProps<Props>(), {
     justify-content: center;
     text-transform: uppercase;
 
+    &_white > span{
+      color: white;
+    }
+
     span {
       display: block;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 1439px) {
+    width: 180px;
+
+    &__text {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    width: 170px;
+
+    &__text {
+      font-size: 12px;
     }
   }
 

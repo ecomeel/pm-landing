@@ -59,8 +59,8 @@ import FooterPage from './components/FooterPage.vue'
   @media (max-width: 549px) {
     &__content > * {
       padding: {
-        left: 16px;
-        right: 16px;
+        left: 12px;
+        right: 12px;
       };
     }
   }
