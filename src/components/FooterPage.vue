@@ -1,21 +1,24 @@
 <script lang="ts" setup>
 import mailIcon from "@/assets/images/icons/mail-icon.svg"
 import tgIcon from "@/assets/images/icons/telegram-icon.svg"
+import { SOCIALS, MAIL } from "@/constants"
 
 defineOptions({ name: "FooterPage" })
 
 const socials = [
   {
-    link: "",
+    link: MAIL,
     icon: mailIcon,
     name: "Почта"
   },
   {
-    link: "",
+    link: SOCIALS.find(el => el.id === "telegram")!.link,
     icon: tgIcon,
     name: "Телеграм",
   },
 ]
+
+const externalLinkHref = (name: string, link: string) => name === "Почта" ? `mailto:${link}` : link
 </script>
 
 <template>
@@ -25,16 +28,19 @@ const socials = [
         <p>Самозанятая Гущина Анастасия Олеговна</p>
         <p>ИНН 780717115213</p>
       </div>
-      <a href="">Согласие на получение информационных рассылок</a>
-      <a href="">Согласие на обработку персональных данных</a>
-      <a href="">Публичная оферта</a>
+      <!--
+        <a href="">Согласие на получение информационных рассылок</a>
+        <a href="">Согласие на обработку персональных данных</a>
+        <a href="">Публичная оферта</a>
+      -->
     </div>
     <div class="footer__links">
       <a
         v-for="(social, index) in socials"
         :key="index"
         class="footer__social"
-        :href="social.link"
+        :href="externalLinkHref(social.name, social.link)"
+        target="_blank"
       >
         <img :alt="social.name" :src="social.icon">
       </a>

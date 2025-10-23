@@ -51,6 +51,7 @@ onMounted(() => {
         <img
           alt="preview"
           class="about__img"
+          loading="lazy"
           src="@/assets/images/background/preview-2_mobile.jpg"
         >
       </picture>

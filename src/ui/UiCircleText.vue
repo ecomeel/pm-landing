@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { LINK } from '@/constants'
+import { ANKETA_LINK } from '@/constants'
 import circleDark from "@/assets/images/circle-text.svg"
 import circleLight from "@/assets/images/circle-text-white.svg"
 
@@ -29,22 +29,24 @@ const circleSrc = computed(() => props.color === "black" ? circleDark : circleLi
       >
     </div>
 
-    <div class="circle-text">
+    <a
+      class="circle-text"
+      :href="ANKETA_LINK"
+      target="_blank"
+    >
       <img
         alt="text"
         class="circle-text__circle"
         :src="circleSrc"
       >
-      <a
+      <div
         class="circle-text__text"
         :class="{ 'circle-text__text_white': props.color === 'white' }"
-        :href="LINK.telegram"
-        target="_blank"
       >
         <span>Хочу</span>
         <span>консультацию</span>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </template>
 

@@ -11,7 +11,11 @@ defineProps<IProps>()
 </script>
 
 <template>
-  <a class="social" :href="link">
+  <a
+    class="social"
+    :href="link"
+    target="_blank"
+  >
     <img
       :alt="name"
       class="social__img"

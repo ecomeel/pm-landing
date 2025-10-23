@@ -58,6 +58,7 @@ const slidesPerView = computed(() => {
           <img
             alt="Отзыв о работе"
             class="photo-slider__image"
+            loading="lazy"
             :src="slide"
           >
         </div>

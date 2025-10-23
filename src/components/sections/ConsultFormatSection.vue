@@ -49,6 +49,7 @@ const { isMobileView } = useProject()
         <img
           alt="preview"
           class="consult__bg"
+          loading="lazy"
           src="@/assets/images/background/preview-3_mobile.jpg"
         >
       </picture>

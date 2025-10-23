@@ -53,7 +53,11 @@ const { isMobileView } = useProject()
             <p class="card__subtitle" v-html="workCase.subtitle" />
           </div>
           <div class="card__top_right">
-            <img :alt="`Кейс ${caseNumber}`" :src="workCase.pictureSource">
+            <img
+              :alt="`Кейс ${caseNumber}`"
+              loading="lazy"
+              :src="workCase.pictureSource"
+            >
           </div>
         </div>
         <div class="card__bottom">
