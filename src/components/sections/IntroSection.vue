@@ -74,14 +74,12 @@ onMounted(() => {
     </div>
 
     <picture>
-      <!--
-        <source
+      <source
         media="(min-width: 768px)"
         srcset="@/assets/images/background/preview-1.webp"
         type="image/webp"
-        >
-      -->
-      <!-- <source srcset="@/assets/images/background/preview-1_mobile.webp" type="image/webp"> -->
+      >
+      <source srcset="@/assets/images/background/preview-1_mobile.webp" type="image/webp">
       <source
         media="(min-width: 768px)"
         srcset="@/assets/images/background/preview-1.jpg"

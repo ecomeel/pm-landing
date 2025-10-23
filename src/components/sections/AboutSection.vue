@@ -34,24 +34,20 @@ onMounted(() => {
   >
     <div class="about__img-wrapper">
       <picture>
-        <!--
-          <source
+        <source
           media="(min-width: 768px)"
           srcset="@/assets/images/background/preview-2.webp"
           type="image/webp"
-          >
-          <source
+        >
+        <source
           srcset="@/assets/images/background/preview-2_mobile.webp"
           type="image/webp"
-          >
-        -->
-        <!--
-          <source
+        >
+        <source
           media="(min-width: 768px)"
-          srcset="@/assets/images/background/preview-2.png"
-          type="image/png"
-          >
-        -->
+          srcset="@/assets/images/background/preview-2.jpg"
+          type="image/jpg"
+        >
         <img
           alt="preview"
           class="about__img"
