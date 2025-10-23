@@ -168,6 +168,7 @@ const { isMobileView } = useProject()
 
     &__underline {
       width: 110%;
+      height: 8px;
     }
 
     &__results-header {

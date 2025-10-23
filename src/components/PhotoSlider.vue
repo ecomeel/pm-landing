@@ -54,11 +54,13 @@ const slidesPerView = computed(() => {
         :key="slide.slice(0, 6) + index"
         class="photo-slider__slide"
       >
-        <img
-          alt="Отзыв о работе"
-          class="photo-slider__image"
-          :src="slide"
-        >
+        <div class="photo-slider__image">
+          <img
+            alt="Отзыв о работе"
+            class="photo-slider__image"
+            :src="slide"
+          >
+        </div>
       </SwiperSlide>
     </Swiper>
     <button
@@ -77,6 +79,14 @@ const slidesPerView = computed(() => {
     height: 300px;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 549px) {
+      height: 200px;
+    }
+
+    @media (max-width: 449px) {
+      height: 175px;
+    }
   }
 }
 
@@ -120,9 +130,34 @@ const slidesPerView = computed(() => {
     }
   }
 
+  &__slide {
+    border: 1px solid black;
+    padding: 16px 0;
+  }
+
   @media (max-width: 767px) {
     &__container {
       gap: 12px;
+    }
+
+    &__slide {
+      padding: 12px 0;
+    }
+  }
+
+  @media (max-width: 549px) {
+    &__container {
+      gap: 12vw
+    }
+
+    &__slide {
+      padding: 8px 0
+    }
+  }
+
+  @media (max-width: 449px) {
+    &__container {
+      gap: 9.3vw
     }
   }
 }
