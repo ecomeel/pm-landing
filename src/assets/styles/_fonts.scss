@@ -1,55 +1,63 @@
 @font-face {
   font-family: "Inter";
-  src: url("@/assets/fonts/InterSemiBold.ttf") format("truetype");
+  src: url("@/assets/fonts/Inter18pt-SemiBold.woff2") format("woff2"),
+    url("@/assets/fonts/Inter18pt-SemiBold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Stetica";
-  src: url("@/assets/fonts/SteticaBold.otf") format("opentype");
-  font-weight: 700;
+  src: url("@/assets/fonts/AAStetica-Bold.woff2") format("woff2"),
+    url("@/assets/fonts/AAStetica-Bold.woff") format("woff");
   font-style: normal;
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "Stetica";
-  src: url("@/assets/fonts/SteticaMedium.otf") format("opentype");
+  src: url("@/assets/fonts/AAStetica-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/AAStetica-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Stetica";
-  src: url("@/assets/fonts/SteticaMediumItalic.otf") format("opentype");
+  src: url("@/assets/fonts/AASteticaMedium-Italic.woff2") format("woff2"),
+    url("@/assets/fonts/AASteticaMedium-Italic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Stetica";
-  src: url("@/assets/fonts/SteticaRegular.otf") format("opentype");
+  src: url("@/assets/fonts/AAStetica-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/AAStetica-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cormorant";
-  src: url("@/assets/fonts/CormorantRegular.ttf") format("truetype");
+  src: url("@/assets/fonts/CormorantGaramond-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/CormorantGaramond-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cormorant";
-  src: url("@/assets/fonts/CormorantMedium.ttf") format("truetype");
+  src: url("@/assets/fonts/CormorantGaramond-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/CormorantGaramond-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cormorant";
-  src: url("@/assets/fonts/CormorantMediumItalic.ttf") format("truetype");
+  src: url("@/assets/fonts/CormorantGaramond-MediumItalic.woff2") format("woff2"),
+    url("@/assets/fonts/CormorantGaramond-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
 }
