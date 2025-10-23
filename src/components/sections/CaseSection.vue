@@ -46,7 +46,7 @@ const workCases: ICase[] = [
   gap: 10px;
 
   @media (max-width: 767px) {
-    gap: 24px;
+    gap: 32px;
     padding-bottom: 50px;
   }
 }

@@ -2,6 +2,7 @@
 import type { ICase } from '@/types'
 import type { PropType } from 'vue'
 import UiSquareList from '@/ui/UiSquareList.vue'
+import { useProject } from '@/composables'
 
 defineOptions({ name: "CaseCard" })
 
@@ -16,27 +17,54 @@ defineProps({
     default: 0,
   }
 })
+
+const { isMobileView } = useProject()
 </script>
 
 <template>
   <div class="card" :class="{ card_left: caseNumber % 2 === 0 }">
-    <div class="card__content-wrapper">
-      <div class="card__text-content">
-        <h3 class="card__title">
-          {{ `КЕЙС №${caseNumber}` }}
-        </h3>
-        <p class="card__subtitle" v-html="workCase.subtitle" />
-        <div class="card__results-header">
-          <p>Результаты, которых нам удалось достичь</p>
+    <template v-if="!isMobileView">
+      <div class="card__content-wrapper">
+        <div class="card__text-content">
+          <h3 class="card__title">
+            {{ `КЕЙС №${caseNumber}` }}
+          </h3>
+          <p class="card__subtitle" v-html="workCase.subtitle" />
+          <div class="card__results-header">
+            <p>Результаты, которых нам удалось достичь</p>
           <!-- TODO: Add arrow down -->
+          </div>
+          <UiSquareList class="card__results-list" :list="workCase.results" />
         </div>
-        <UiSquareList class="card__results-list" :list="workCase.results" />
+        <div class="card__image">
+          <img :alt="`Кейс ${caseNumber}`" :src="workCase.pictureSource">
+        </div>
       </div>
-      <div class="card__image">
-        <img :alt="`Кейс ${caseNumber}`" :src="workCase.pictureSource">
+      <div class="card__underline" />
+    </template>
+    <template v-else>
+      <div class="card__underline" />
+      <div class="card__content-wrapper">
+        <div class="card__top">
+          <div class="card__top_left">
+            <h3 class="card__title">
+              {{ `КЕЙС №${caseNumber}` }}
+            </h3>
+            <p class="card__subtitle" v-html="workCase.subtitle" />
+          </div>
+          <div class="card__top_right">
+            <img :alt="`Кейс ${caseNumber}`" :src="workCase.pictureSource">
+          </div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__results-header">
+            <p>Результаты, которых нам удалось достичь</p>
+          <!-- TODO: Add arrow down -->
+          </div>
+          <UiSquareList :list="workCase.results" />
+        </div>
       </div>
-    </div>
-    <div class="card__underline" />
+    </template>
   </div>
 </template>
 
@@ -63,11 +91,13 @@ defineProps({
   }
 
   &__subtitle {
+    text-transform: uppercase;
     @include subtitle-bold;
   }
 
   &__results-header {
     p {
+      text-transform: uppercase;
       text-decoration: underline;
       @include subtitle-semi-bold;
     }
@@ -116,20 +146,52 @@ defineProps({
   }
 
   @media (max-width: 767px) {
+    &_left {
+      .card__top {
+        flex-direction: row-reverse;
+      }
+    }
+
     &__content-wrapper {
-      gap: 30px;
+      display: block;
     }
 
-    &__text-content {
-      gap: 12px;
-    }
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 4.06vw;
 
-    &__image {
-      display: none;
+      > * {
+        flex: 1 0 calc(50% - 2.03vw)
+      }
     }
 
     &__underline {
-      display: none;
+      width: 110%;
+    }
+
+    &__results-header {
+      margin: 16px 0 14px;
+      width: 55vw;
+
+      > p {
+        font-size: 3.75vw;
+        line-height: 1.2em;
+      }
+    }
+
+    &__subtitle {
+      margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 549px) {
+    &__subtitle {
+      margin-top: 8px;
+    }
+
+    &__results-header {
+      margin: 16px 0 10px;
     }
   }
 }
