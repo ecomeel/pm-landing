@@ -41,7 +41,9 @@ onMounted(() => {
   <section id="intro" class="intro">
     <header class="intro__header header overflow-clip inline-block">
       <h1 class="header__title main-medium inline-block">
-        Гущина Анастасия
+        <a href="#about">
+          Гущина Анастасия
+        </a>
       </h1>
       <img
         alt="arrow icon"
@@ -130,6 +132,10 @@ onMounted(() => {
 
       @include main-medium;
     }
+
+    &__arrow {
+      width: 24px;
+    }
   }
 
   &__subtitle {
@@ -176,13 +182,17 @@ onMounted(() => {
     padding-bottom: 26vw;
 
     .header {
-      gap: 8px;
+      gap: 2vw;
       padding-top: 50px;
       margin-left: 0;
 
       &__title {
         text-decoration-thickness: 1px;
         text-underline-offset: 2px;
+      }
+
+      &__arrow {
+        width: 3.5vw;
       }
     }
 

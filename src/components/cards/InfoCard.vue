@@ -32,6 +32,11 @@ defineProps({
   <div class="card" :class="`card__corner_${cutCornerPosition}`">
     <header class="card__header">
       <h3>{{ card.title }}</h3>
+      <img
+        alt="arrow"
+        class="card__header-arrow"
+        src="@/assets/images/icons/arrow-right-bottom-white.svg"
+      >
     </header>
 
     <div
@@ -56,6 +61,9 @@ defineProps({
     padding: 20px 2.18vw;
     background-color: $beige-color;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: .8vw;
 
     h3 {
       @include subtitle-semi-bold;
@@ -81,6 +89,11 @@ defineProps({
   @media (max-width: 1439px) {
     &__header {
       padding: 16px 20px;
+      gap: 12px;
+
+      &-arrow {
+        width: 16px;
+      }
 
       h3 {
         font-size: 18px;
@@ -95,6 +108,11 @@ defineProps({
   @media (max-width: 767px) {
     &__header {
       padding: 18px 28px;
+      gap: 8px;
+
+      // &-arrow {
+      //   width: 16px;
+      // }
 
       h3 {
         letter-spacing: -0.01em;
@@ -110,6 +128,11 @@ defineProps({
   @media (max-width: 549px) {
     &__header {
       padding: 9px 14px;
+      gap: 1.25vw;
+
+      &-arrow {
+        width: 2.8vw;
+      }
 
       h3 {
         font-size: 3.75vw;

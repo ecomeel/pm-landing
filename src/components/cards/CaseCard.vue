@@ -31,8 +31,14 @@ const { isMobileView } = useProject()
           </h3>
           <p class="card__subtitle" v-html="workCase.subtitle" />
           <div class="card__results-header">
-            <p>Результаты, которых нам удалось достичь</p>
-          <!-- TODO: Add arrow down -->
+            <p>
+              Результаты, которых нам удалось достичь
+              <img
+                alt="arrow"
+                class="card__header-arrow"
+                src="@/assets/images/icons/arrow-right-bottom.svg"
+              >
+            </p>
           </div>
           <UiSquareList class="card__results-list" :list="workCase.results" />
         </div>
@@ -62,7 +68,14 @@ const { isMobileView } = useProject()
         </div>
         <div class="card__bottom">
           <div class="card__results-header">
-            <p>Результаты, которых нам удалось достичь</p>
+            <p>
+              Результаты, которых нам удалось достичь
+              <img
+                alt="arrow"
+                class="card__header-arrow"
+                src="@/assets/images/icons/arrow-right-bottom.svg"
+              >
+            </p>
           <!-- TODO: Add arrow down -->
           </div>
           <UiSquareList :list="workCase.results" />
@@ -103,8 +116,16 @@ const { isMobileView } = useProject()
     p {
       text-transform: uppercase;
       text-decoration: underline;
+      line-height: 1.3em;
       @include subtitle-semi-bold;
     }
+  }
+
+  &__header-arrow {
+    display: inline-block;
+    width: 1.4vw;
+    margin-left: 5px;
+    margin-top: -3px;
   }
 
   &__content-wrapper {
@@ -139,6 +160,12 @@ const { isMobileView } = useProject()
     align-self: flex-end;
   }
 
+  @media (max-width: 1439px) {
+    &__header-arrow {
+      width: 18px;
+    }
+  }
+
   @media (max-width: 1279px) {
     &__text-content {
       gap: 16px;
@@ -146,6 +173,10 @@ const { isMobileView } = useProject()
 
     &__underline {
       height: 10px;
+    }
+
+    &__header-arrow {
+      width: 16px;
     }
   }
 
@@ -168,6 +199,10 @@ const { isMobileView } = useProject()
       > * {
         flex: 1 0 calc(50% - 2.03vw)
       }
+    }
+
+    &__header-arrow {
+      width: 3vw;
     }
 
     &__underline {

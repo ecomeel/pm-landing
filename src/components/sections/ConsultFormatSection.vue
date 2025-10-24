@@ -40,17 +40,11 @@ const { isMobileView } = useProject()
           srcset="@/assets/images/background/preview-3.webp"
           type="image/webp"
         >
-        <source srcset="@/assets/images/background/preview-3_mobile.webp" type="image/webp">
-        <source
-          media="(min-width: 768px)"
-          srcset="@/assets/images/background/preview-3.jpg"
-          type="image/jpg"
-        >
         <img
           alt="preview"
           class="consult__bg"
           loading="lazy"
-          src="@/assets/images/background/preview-3_mobile.jpg"
+          src="@/assets/images/background/preview-3.jpg"
         >
       </picture>
     </div>
@@ -176,8 +170,8 @@ const { isMobileView } = useProject()
     }
 
     &__bg {
-      transform: scaleX(-1);
       object-position: 19%;
+      transform: scaleX(-1);
     }
 
     &__description {

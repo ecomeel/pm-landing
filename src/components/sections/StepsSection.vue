@@ -29,9 +29,16 @@ const stepsList = [
     <h2 class="steps__title">
       Этапы <span>нашей</span> работы
     </h2>
-    <p class="steps__subtitle">
-      Чтобы консультация была максимально полезной, мы работаем по структуре
-    </p>
+    <div class="steps__subtitle-wrapper">
+      <p class="steps__subtitle">
+        Чтобы консультация была максимально полезной, мы работаем по структуре
+        <img
+          alt="arrow"
+          class="steps__subtitle-arrow"
+          src="@/assets/images/icons/arrow-right-bottom.svg"
+        >
+      </p>
+    </div>
 
     <UiNumberedList :list="stepsList" />
 
@@ -56,6 +63,12 @@ const stepsList = [
   &__subtitle {
     margin: 36px 0 70px;
     @include subtitle;
+
+    &-arrow {
+      display: inline-block;
+      width: 18px;
+      margin-left: 5px;
+    }
   }
 
   .invite {
@@ -85,6 +98,10 @@ const stepsList = [
 
   @media (max-width: 1279px) {
     padding-top: 90px;
+
+    &__subtitle {
+      margin: 28px 0 40px;
+    }
   }
 
   @media (max-width: 1023px) {
@@ -92,6 +109,10 @@ const stepsList = [
 
     &__subtitle {
       margin: 20px 0 50px;
+
+      &-arrow {
+        width: 14px;
+      }
     }
 
     .invite__price {
@@ -107,12 +128,20 @@ const stepsList = [
 
     &__subtitle {
       margin: 8px 0 40px;
+
+      &-arrow {
+        width: 12px;
+      }
     }
   }
 
   @media (max-width: 549px) {
     &__subtitle {
       margin-bottom: calc(22px + 1.5vw);
+
+      &-arrow {
+        width: 3vw;
+      }
     }
   }
 }
