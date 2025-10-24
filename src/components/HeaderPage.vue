@@ -105,13 +105,18 @@ onMounted(() => {
 
 <style lang="scss">
 .navigation {
-  &__item {
-    border: 1px solid transparent;
-    border-radius: 30px;
-    transition: .4s;
+  &__link {
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1.5px;
+      background: black;
+      transition: width 0.4s;
+    }
 
-    &:hover {
-      border-color: $black-color;
+    &:hover::after {
+      width: 100%;
     }
   }
 }
