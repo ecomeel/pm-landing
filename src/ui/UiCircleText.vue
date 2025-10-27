@@ -131,7 +131,7 @@ const circleSrc = computed(() => props.color === "black" ? circleDark : circleLi
     width: 150px;
 
     &__with-arrow {
-      width: 73%;
+      width: calc(100vw * 2.15 / 3 - 24px);
     }
 
     &__text {

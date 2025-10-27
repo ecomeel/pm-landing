@@ -1,9 +1,13 @@
 <script lang="ts" setup>
 import PhotoSlider from '../PhotoSlider.vue'
-import reviewImg1 from "@/assets/images/reviews/review-1.png"
-import reviewImg2 from "@/assets/images/reviews/review-2.png"
-import reviewImg3 from "@/assets/images/reviews/review-3.png"
-import reviewImg4 from "@/assets/images/reviews/review-4.png"
+// import reviewImg1 from "@/assets/images/reviews/review-1.png"
+// import reviewImg2 from "@/assets/images/reviews/review-2.png"
+// import reviewImg3 from "@/assets/images/reviews/review-3.png"
+// import reviewImg4 from "@/assets/images/reviews/review-4.png"
+import reviewImg1 from "@/assets/images/reviews/review-1.jpg"
+import reviewImg2 from "@/assets/images/reviews/review-2.jpg"
+import reviewImg3 from "@/assets/images/reviews/review-3.jpg"
+import reviewImg4 from "@/assets/images/reviews/review-4.jpg"
 
 defineOptions({ name: "ReviewsSection" })
 
@@ -35,7 +39,7 @@ const reviewsList = [
     padding-bottom: 60px;
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 

@@ -82,11 +82,7 @@ const slidesPerView = computed(() => {
     justify-content: center;
 
     @media (max-width: 549px) {
-      height: 200px;
-    }
-
-    @media (max-width: 449px) {
-      height: 175px;
+      height: 250px;
     }
   }
 }
@@ -131,11 +127,6 @@ const slidesPerView = computed(() => {
     }
   }
 
-  &__slide {
-    border: 1px solid black;
-    padding: 16px 0;
-  }
-
   @media (max-width: 767px) {
     &__container {
       gap: 12px;
@@ -150,15 +141,11 @@ const slidesPerView = computed(() => {
     &__container {
       gap: 12vw
     }
-
-    &__slide {
-      padding: 8px 0
-    }
   }
 
   @media (max-width: 449px) {
     &__container {
-      gap: 9.3vw
+      gap: 5vw
     }
   }
 }

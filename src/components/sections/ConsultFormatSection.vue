@@ -101,7 +101,6 @@ const { isMobileView } = useProject()
   &__invite {
     margin-top: 32px;
     display: flex;
-    justify-content: flex-end;
   }
 
   &__bg {

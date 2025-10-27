@@ -42,6 +42,7 @@ defineProps<{
 
     &__number {
       margin-top: -40px;
+      flex: 0 0 87px;
       font-family: "Cormorant";
       font-weight: 400;
       font-style: italic;
@@ -76,6 +77,7 @@ defineProps<{
       &__number {
         margin-top: -27px;
         font-size: 70px;
+        flex: 0 0 61px;
       }
     }
   }
@@ -91,6 +93,7 @@ defineProps<{
       &__number {
         margin-top: -5vw;
         font-size: 14vw;
+        flex: 0 0 12vw;
       }
 
       &__description {

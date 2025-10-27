@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { useProject } from '@/composables'
 import UiCircleText from '@/ui/UiCircleText.vue'
 import UiNumberedList from '@/ui/UiNumberedList.vue'
 
 defineOptions({ name: "StepsSection" })
+
+const { isMobileView } = useProject()
 
 const stepsList = [
   {
@@ -44,9 +47,9 @@ const stepsList = [
 
     <div class="steps__invite invite">
       <p class="invite__price">
-        Стоимость консультации - 5000₽
+        Стоимость консультации — 5000₽
       </p>
-      <UiCircleText class="invite__circle" />
+      <UiCircleText class="invite__circle" :show-arrow="!isMobileView" />
     </div>
   </section>
 </template>
@@ -77,14 +80,6 @@ const stepsList = [
     align-items: center;
     gap: 20px;
 
-    &__arrow {
-      width: 10vw;
-
-      img {
-        width: 100%;
-      }
-    }
-
     &__price {
       padding: 12px 16px;
       border: 1px solid $black-color;
@@ -92,7 +87,15 @@ const stepsList = [
     }
 
     @media (max-width: 767px) {
-      display: none;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 549px) {
+      &__price {
+        padding: 10px 12px 9px;
+        font-size: 12px !important;
+      }
     }
   }
 
