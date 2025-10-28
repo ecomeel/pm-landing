@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-// import { Navigation } from 'swiper'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -77,12 +76,21 @@ const slidesPerView = computed(() => {
 <style lang="scss">
 .swiper {
   &-slide {
-    height: 300px;
+    // height: 300px;
     display: flex;
     justify-content: center;
+    height: 22vw;
+
+    @media (max-width: 1279px) {
+      height: 300px;
+    }
+
+    @media (max-width: 767px) {
+      height: 250px;
+    }
 
     @media (max-width: 549px) {
-      height: 250px;
+      height: 200px;
     }
   }
 }
@@ -130,10 +138,6 @@ const slidesPerView = computed(() => {
   @media (max-width: 767px) {
     &__container {
       gap: 12px;
-    }
-
-    &__slide {
-      padding: 12px 0;
     }
   }
 
