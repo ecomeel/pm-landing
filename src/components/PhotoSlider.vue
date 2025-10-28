@@ -76,7 +76,6 @@ const slidesPerView = computed(() => {
 <style lang="scss">
 .swiper {
   &-slide {
-    // height: 300px;
     display: flex;
     justify-content: center;
     height: 22vw;
